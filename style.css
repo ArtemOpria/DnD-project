@@ -298,3 +298,66 @@ header{
   width: 573px;
   height: 567px
 }
+
+.merge{
+  height: 847px;
+}
+.merge-div{
+  display: flex;
+  margin: 104px 40px 0 40px;
+  justify-content: center;
+}
+.merge-div-pic img{
+  width: 666px;
+  height: 640px
+}
+.merge-div-text-n-button{
+  margin-left: 25px;
+  width: 666px;
+  height: 640px;
+  background-color: #000000;
+}
+.merge-div-text{
+  margin-left:56px;
+  margin-top: 184px;
+}
+.merge-div-text p{
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 50px;
+  line-height: 60px;
+  letter-spacing: 1.65px;
+  color: #FFFFFF;
+}
+.merge-div-button{
+  margin-left: 63px;
+}
+
+.contacts{
+  height: 388px;
+}
+.contacts-div{
+  display:flex;
+  justify-content: center;
+}
+.contacts-info{
+  margin-top: 45px;
+}
+.contacts-head p{
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: 2px;
+  color: #FFFFFF;
+}
+.contacts-line p{
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 33px;
+  color: #FFFFFF;
+}
