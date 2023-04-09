@@ -1,7 +1,7 @@
 const posterLogo = document.getElementById("posterLogo");
 const characterTextNButton = document.getElementById("characterTextNButton");
 const bestiaryTextNButton = document.getElementById("bestiaryTextNButton");
-
+const diceTextNButton = document.getElementById("diceTextNButton");
 // const characterButton = document.getElementById("characterButton");
 // const characterText = document.getElementById("characterText");
 
@@ -51,6 +51,7 @@ const observerRight = new IntersectionObserver(function(entries, observer) {
 observerDown.observe(posterLogo);
 observerLeft.observe(characterTextNButton);
 observerRight.observe(bestiaryTextNButton);
+observerLeft.observe(diceTextNButton);
 
 // observerLeft.observe(characterButton);
 // observerLeft.observe(characterText);
