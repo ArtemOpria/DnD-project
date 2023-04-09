@@ -1,0 +1,293 @@
+/* @font-face {
+  font-family: Elder Futhark;
+  src: url('path/to/elder-futhark.ttf');
+} */
+
+
+/* ^^^^^^^^  */
+/*  Шрифти   */
+
+
+/* body::-webkit-scrollbar-track {border-radius: 4px;}
+body::-webkit-scrollbar {width: 6px;}
+body::-webkit-scrollbar-thumb {border-radius: 4px;background: #f0f2f5;}
+body:hover::-webkit-scrollbar-thumb {background: #d60000;} */
+
+
+/* ^^^^^^^^^^  */
+/*  Скролбар   */
+
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Убираем внутренние отступы */
+ul[class],
+ol[class] {
+  padding: 0;
+}
+
+/* Убираем внешние отступы */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+ul[class],
+ol[class],
+li,
+figure,
+figcaption,
+blockquote,
+dl,
+dd {
+  margin: 0;
+  margin-block-start: 0em;
+  margin-block-end: 0em;
+}
+
+/* Выставляем основные настройки по-умолчанию для body */
+body {
+  min-height: 100vh;
+  scroll-behavior: smooth;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+  overflow-x: hidden;
+  background: #FF0202;
+}
+
+/* Удаляем стандартную стилизацию для всех ul и il, у которых есть атрибут class*/
+ul[class],
+ol[class] {
+  list-style: none;
+}
+
+/* Элементы a, у которых нет класса, сбрасываем до дефолтных стилей */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Упрощаем работу с изображениями */
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* Указываем понятную периодичность в потоке данных у article*/
+article > * + * {
+  margin-top: 1em;
+}
+
+/* Наследуем шрифты для инпутов и кнопок */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* ^^^^^^^^^^^^^^^^^  */
+/*  Обнуляючі стилі   */
+
+header{
+  display: flex;
+  justify-content: space-between;
+  background-color: black;
+  height: 100px;
+  align-items: center;
+}
+.header-frame{
+    width: 1200px;
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+    height: 60px;
+}
+.header-nav{
+  display: flex;
+}
+.header-logo{
+  position:relative;
+}
+.header-nav p{
+  margin-left:32px;
+  margin-top:20px;
+  color: white;
+  font-family: 'Orbitron', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 20px;
+}
+.header-nav a{
+  text-decoration:none;
+}
+.header-nav-element{
+  position:relative;
+}
+.header-nav-element::after{
+  content:'';
+  position:absolute;
+  width: 0%;
+  height:3px;
+  background: red;
+  top:115%;
+  left:51%;
+  transform: translate(-50%, 0%);
+  transition: 0.3s;
+}
+.header-nav-element:hover::after{
+    width: 100%;
+}
+
+
+/* ^^^^^^^  */
+/*  Хедер   */
+
+.poster{
+  width: 100%;
+  height: 828px;
+  align-items: center;
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url("./img/poster.jpg");
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.poster-top{
+  display: flex;
+  padding-top:73px;
+  justify-content: center;
+  opacity: 1;
+}
+.poster-top p{
+  color:white;
+  font-family: 'Elder Futhark', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+}
+.poster-big-logo{
+  margin: 327px auto 0 auto;
+  background-image: url("./img/poster-big-logo.png");
+  width: 588px;
+  height: 206px;
+  opacity: 0;
+}
+.show-down {
+  opacity: 1;
+  transform: translateY(-120px);
+  transition: opacity 1s, transform 1s;
+}
+.show-left {
+  opacity: 1;
+  transform: translateX(120px);
+  transition: opacity 1s, transform 1s;
+}
+.show-right{
+  opacity: 1;
+  transform: translateX(-120px);
+  transition: opacity 1s, transform 1s;  
+}
+
+.character{
+  width: 100%;
+  height: 847px;
+  clip-path: polygon(0% 5%, 100% 0, 100% 100%, 0 100%);
+  background: black;
+}
+.character-content{
+  position: relative;
+  justify-content: space-between;
+  display: flex;
+  margin: 0 auto;
+  width: 1200px;
+  height: 393px;
+  padding-top: 500px;
+}
+.character-text-n-button{
+  height: 393px;
+  margin-top: -300px;
+  margin-left: -120px;
+}
+.character-button{
+  cursor: pointer;
+  display: flex;
+  justify-items: center;
+  justify-content: center;
+  height: 60px;
+  width: 193px;
+  background: #FF0202;
+  border-radius: 6px;
+  margin-top: 93px;
+  color: #fff;
+  background-color: transparent;
+  border: 3px solid #FF0202;
+  -webkit-transition: all .15s ease-in-out;
+  transition: all .15s ease-in-out;
+  color: #FF0202;
+}
+.character-button:hover{
+  box-shadow: 0 0 10px 0 #FF0202 inset, 0 0 20px 2px #FF0202;
+  border: 3px solid #FF0202;
+}
+.character-button p{
+  margin-top:16px;
+  color: white;
+  font-family: 'Orbitron', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 17px;
+  line-height: 20px;
+  text-align: center;
+}
+.character-text{
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 60px;
+  line-height: 60px;
+  width: 570px;
+  letter-spacing: 1.8px;
+  color: #FFFFFF;
+}
+.character-right-logo{
+  margin-top: -400px;
+}
+.character-right-logo img{
+  width: 542px;
+  height: 580px;
+}
+
+
+.bestiary{
+  background: #000000;
+  height: 854px;
+  clip-path: polygon(0% 0%, 100% 5%, 100% 100%, 0 100%);
+}
+.bestiary-text-n-button{
+  margin-right:-160px;
+}
+.bestiary-text{
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 48px;
+  line-height: 55px;
+  letter-spacing: 1.65px;
+}
+.bestiary-pic img{
+  height: 585px;
+  width: 578px;
+}
+
+.dice{
+  height: 847px;
+  clip-path: polygon(0% 5%, 100% 0, 100% 100%, 0 100%);
+  background: black;
+}
