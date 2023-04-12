@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald&family=Poppins&family=Roboto&display=swap');
 /* @font-face {
   font-family: Elder Futhark;
   src: url('path/to/elder-futhark.ttf');
@@ -57,7 +58,7 @@ body {
   text-rendering: optimizeSpeed;
   line-height: 1.5;
   overflow-x: hidden;
-  background: #FF0202;
+  background: #B41616;
 }
 
 /* Удаляем стандартную стилизацию для всех ul и il, у которых есть атрибут class*/
@@ -339,7 +340,9 @@ header{
 }
 .contacts-div{
   display:flex;
-  justify-content: center;
+  justify-content: space-between;
+  margin: 0 auto;
+  width: 1200px;
 }
 .contacts-info{
   margin-top: 45px;
@@ -361,3 +364,153 @@ header{
   line-height: 33px;
   color: #FFFFFF;
 }
+.contacts-inputs-top{
+  display: flex;
+  margin-bottom: 30px;
+}
+.contacts-inputs-top input{
+  width: 346px;
+  height: 58px;
+  padding: 18px 41px;
+  background-color: #fff;
+  border: 2px solid var(--input-border);
+  border-radius: 4px;
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 21px;
+}
+.contacts-inputs-name{
+  margin-right:30px ;
+}
+.contacts-inputs-message textarea{
+  width: 723px;
+  height: 128px;
+  padding: 20px 41px;
+  border: 2px solid var(--input-border);
+  border-radius: 4px;
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 21px;
+}
+.contacts-button p{
+  margin-top:14.5px;
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 21px;
+  text-align: center;
+  color: #FFFFFF
+}
+.contacts-button {
+  border-radius: 6px;
+  margin: 82px 40.9%;
+  background-color: black;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 28px;
+  width: 192px;
+  height: 51px;
+  transition: all 0.5s;
+  cursor: pointer;
+}
+.contacts-button p {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+.contacts-button p:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+.contacts-button:hover p {
+  padding-right: 25px;
+}
+.contacts-button:hover p:after {
+  opacity: 1;
+  right: 0;
+}
+
+footer{
+  height: 254px;
+  background: black;
+  padding-top: 61px;
+}
+.footer-top{
+  display:flex;
+  justify-content: space-between;
+  margin-left:110px;
+  margin-right: 140px;
+}
+.footer-list{
+  display: flex;
+}
+.footer-list-element{
+  margin-left: 20px;
+}
+.footer-list-element p{
+  font-family: 'Oswald';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 22px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #FFFFFF;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.footer-list-element:hover p{
+  color:#9c9c9c;
+  transition: 0.3s;
+}
+.footer-social{
+  display:flex;
+  justify-content: right;
+  margin-right: 188px;
+  margin-top: 20px;
+}
+.footer-social-element{
+  border-radius: 25px;
+  width: 50px;
+  height: 50px;
+  margin-left: 4px;
+}
+.instagram svg{
+  fill: white;
+  transition: 0.3s;
+}
+.instagram:hover svg{
+  fill: rgb(212, 107, 9);
+  transition: 0.3s;
+  cursor: pointer;
+}
+.twitter svg{
+  fill: white;
+  transition: 0.3s;
+}
+.twitter:hover svg{
+  fill: #00acee;
+  transition: 0.3s;
+  cursor: pointer;
+}
+.facebook svg{
+  fill: white;
+  transition: 0.3s;
+}
+.facebook:hover svg{
+  fill: #3b5998;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
