@@ -80,7 +80,7 @@ img {
 }
 
 /* Указываем понятную периодичность в потоке данных у article*/
-article > * + * {
+article>*+* {
   margin-top: 1em;
 }
 
@@ -95,29 +95,33 @@ select {
 /* ^^^^^^^^^^^^^^^^^  */
 /*  Обнуляючі стилі   */
 
-header{
+header {
   display: flex;
   justify-content: space-between;
   background-color: black;
   height: 100px;
   align-items: center;
 }
-.header-frame{
-    width: 1200px;
-    display: flex;
-    justify-content: space-between;
-    margin: 0 auto;
-    height: 60px;
+
+.header-frame {
+  width: 1200px;
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto;
+  height: 60px;
 }
-.header-nav{
+
+.header-nav {
   display: flex;
 }
-.header-logo{
-  position:relative;
+
+.header-logo {
+  position: relative;
 }
-.header-nav p{
-  margin-left:32px;
-  margin-top:20px;
+
+.header-nav p {
+  margin-left: 32px;
+  margin-top: 20px;
   color: white;
   font-family: 'Orbitron', sans-serif;
   font-style: normal;
@@ -125,38 +129,43 @@ header{
   font-size: 20px;
   line-height: 20px;
 }
-.header-nav a{
-  text-decoration:none;
-}
-.header-nav-element{
-  position:relative;
+
+.header-nav a {
   text-decoration: none;
 }
-.header-nav-element p{
-  position:relative;
+
+.header-nav-element {
+  position: relative;
+  text-decoration: none;
+}
+
+.header-nav-element p {
+  position: relative;
   text-decoration: none;
   cursor: pointer;
 }
-.header-nav-element::after{
-  content:'';
-  position:absolute;
+
+.header-nav-element::after {
+  content: '';
+  position: absolute;
   width: 0%;
-  height:3px;
+  height: 3px;
   background: red;
-  top:115%;
-  left:51%;
+  top: 115%;
+  left: 51%;
   transform: translate(-50%, 0%);
   transition: 0.3s;
 }
-.header-nav-element:hover::after{
-    width: 100%;
+
+.header-nav-element:hover::after {
+  width: 100%;
 }
 
 
 /* ^^^^^^^  */
 /*  Хедер   */
 
-.poster{
+.poster {
   width: 100%;
   height: 828px;
   align-items: center;
@@ -166,50 +175,57 @@ header{
   background-repeat: no-repeat;
   background-size: cover;
 }
-.poster-top{
+
+.poster-top {
   display: flex;
-  padding-top:73px;
+  padding-top: 73px;
   justify-content: center;
   opacity: 1;
 }
-.poster-top p{
-  color:white;
+
+.poster-top p {
+  color: white;
   font-family: 'Elder Futhark', sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 16px;
   line-height: 20px;
 }
-.poster-big-logo{
+
+.poster-big-logo {
   margin: 327px auto 0 auto;
   background-image: url("./img/poster-big-logo.png");
   width: 588px;
   height: 206px;
   opacity: 0;
 }
+
 .show-down {
   opacity: 1 !important;
   transform: translateY(-120px) !important;
   transition: opacity 1s, transform 1s;
 }
+
 .show-left {
   opacity: 1 !important;
   transform: translateX(120px) !important;
   transition: opacity 1s, transform 1s;
 }
-.show-right{
+
+.show-right {
   opacity: 1 !important;
   transform: translateX(-120px) !important;
-  transition: opacity 1s, transform 1s;  
+  transition: opacity 1s, transform 1s;
 }
 
-.character{
+.character {
   width: 100%;
   height: 847px;
   clip-path: polygon(0% 5%, 100% 0, 100% 100%, 0 100%);
   background: black;
 }
-.character-content{
+
+.character-content {
   position: relative;
   justify-content: space-between;
   display: flex;
@@ -218,13 +234,15 @@ header{
   height: 393px;
   padding-top: 500px;
 }
-.character-text-n-button{
+
+.character-text-n-button {
   height: 393px;
   margin-top: -300px;
   margin-left: -120px;
   opacity: 0;
 }
-.character-button{
+
+.character-button {
   cursor: pointer;
   display: flex;
   justify-items: center;
@@ -241,12 +259,14 @@ header{
   transition: all .15s ease-in-out;
   color: #FF0202;
 }
-.character-button:hover{
+
+.character-button:hover {
   box-shadow: 0 0 10px 0 #FF0202 inset, 0 0 20px 2px #FF0202;
   border: 3px solid #FF0202;
 }
-.character-button p{
-  margin-top:16px;
+
+.character-button p {
+  margin-top: 16px;
   color: white;
   font-family: 'Orbitron', sans-serif;
   font-style: normal;
@@ -255,7 +275,8 @@ header{
   line-height: 20px;
   text-align: center;
 }
-.character-text{
+
+.character-text {
   font-family: 'Roboto';
   font-style: normal;
   font-weight: 400;
@@ -265,24 +286,28 @@ header{
   letter-spacing: 1.8px;
   color: #FFFFFF;
 }
-.character-right-logo{
+
+.character-right-logo {
   margin-top: -400px;
 }
-.character-right-logo img{
+
+.character-right-logo img {
   width: 542px;
   height: 580px;
 }
 
 
-.bestiary{
+.bestiary {
   background: #000000;
   height: 854px;
   clip-path: polygon(0% 0%, 100% 5%, 100% 100%, 0 100%);
 }
-.bestiary-text-n-button{
-  margin-right:-160px;
+
+.bestiary-text-n-button {
+  margin-right: -160px;
 }
-.bestiary-text{
+
+.bestiary-text {
   font-family: 'Roboto';
   font-style: normal;
   font-weight: 400;
@@ -290,51 +315,60 @@ header{
   line-height: 55px;
   letter-spacing: 1.65px;
 }
-.bestiary-pic img{
+
+.bestiary-pic img {
   height: 585px;
   width: 578px;
 }
 
-.dice{
+.dice {
   height: 847px;
   clip-path: polygon(0% 5%, 100% 0, 100% 100%, 0 100%);
   background: black;
 }
-.dice-button{
+
+.dice-button {
   margin-top: 200px;
 }
-.dice-pic img{
+
+.dice-pic img {
   width: 573px;
   height: 567px
 }
 
-.merge{
+.merge {
   height: 847px;
 }
-.merge-div{
+
+.merge-div {
   display: flex;
   margin: 104px 40px 0 40px;
   justify-content: center;
 }
-.merge-div-pic img{
+
+.merge-div-pic img {
   width: 666px;
   height: 640px
 }
-.merge-div-text-n-button{
+
+.merge-div-text-n-button {
   margin-left: 25px;
   width: 666px;
   height: 640px;
   background-color: #000000;
 }
-.megre-div-observer{
+
+.megre-div-observer {
   opacity: 0;
-  padding-top:90px;
+  padding-top: 90px;
 }
-.merge-div-text{
-  margin-left:56px;
+
+.merge-div-text {
+  margin-left: 56px;
   margin-top: 184px;
 }
-.merge-div-text p{
+
+.merge-div-text p {
   font-family: 'Roboto';
   font-style: normal;
   font-weight: 400;
@@ -343,23 +377,27 @@ header{
   letter-spacing: 1.65px;
   color: #FFFFFF;
 }
-.merge-div-button{
+
+.merge-div-button {
   margin-left: 63px;
 }
 
-.contacts{
+.contacts {
   height: 388px;
 }
-.contacts-div{
-  display:flex;
+
+.contacts-div {
+  display: flex;
   justify-content: space-between;
   margin: 0 auto;
   width: 1200px;
 }
-.contacts-info{
+
+.contacts-info {
   margin-top: 45px;
 }
-.contacts-head p{
+
+.contacts-head p {
   font-family: 'Poppins';
   font-style: normal;
   font-weight: 400;
@@ -368,7 +406,8 @@ header{
   letter-spacing: 2px;
   color: #FFFFFF;
 }
-.contacts-line p{
+
+.contacts-line p {
   font-family: 'Poppins';
   font-style: normal;
   font-weight: 400;
@@ -376,11 +415,13 @@ header{
   line-height: 33px;
   color: #FFFFFF;
 }
-.contacts-inputs-top{
+
+.contacts-inputs-top {
   display: flex;
   margin-bottom: 30px;
 }
-.contacts-inputs-top input{
+
+.contacts-inputs-top input {
   width: 346px;
   height: 58px;
   padding: 18px 41px;
@@ -393,21 +434,26 @@ header{
   font-size: 14px;
   line-height: 21px;
 }
-.contacts-inputs-top input:focus{
+
+.contacts-inputs-top input:focus {
   outline: 0;
 }
-.contacts-inputs-top input::placeholder{
+
+.contacts-inputs-top input::placeholder {
   transition: all 0.3s;
   transform: translateY(0);
 }
-.contacts-inputs-top input:focus::placeholder{
+
+.contacts-inputs-top input:focus::placeholder {
   font-size: 12px;
   transform: translateY(-16px);
 }
-.contacts-inputs-name{
-  margin-right:30px ;
+
+.contacts-inputs-name {
+  margin-right: 30px;
 }
-.contacts-inputs-message textarea{
+
+.contacts-inputs-message textarea {
   width: 723px;
   height: 128px;
   padding: 20px 41px;
@@ -419,20 +465,24 @@ header{
   font-size: 14px;
   line-height: 21px;
 }
-.contacts-inputs-message textarea::placeholder{
+
+.contacts-inputs-message textarea::placeholder {
   transition: all 0.3s;
   transform: translateY(0);
 }
-.contacts-inputs-message textarea:focus::placeholder{
+
+.contacts-inputs-message textarea:focus::placeholder {
   font-size: 12px;
   transform: translateY(-15px);
   transition: all 0.3s;
 }
-.contacts-inputs-message textarea:focus{
+
+.contacts-inputs-message textarea:focus {
   outline: 0;
 }
-.contacts-button p{
-  margin-top:14.5px;
+
+.contacts-button p {
+  margin-top: 14.5px;
   font-family: 'Poppins';
   font-style: normal;
   font-weight: 700;
@@ -441,6 +491,7 @@ header{
   text-align: center;
   color: #FFFFFF
 }
+
 .contacts-button {
   border-radius: 6px;
   margin: 82px 40.9%;
@@ -454,12 +505,14 @@ header{
   transition: all 0.5s;
   cursor: pointer;
 }
+
 .contacts-button p {
   cursor: pointer;
   display: inline-block;
   position: relative;
   transition: 0.5s;
 }
+
 .contacts-button p:after {
   content: '\00bb';
   position: absolute;
@@ -468,32 +521,38 @@ header{
   right: -20px;
   transition: 0.5s;
 }
+
 .contacts-button:hover p {
   padding-right: 25px;
 }
+
 .contacts-button:hover p:after {
   opacity: 1;
   right: 0;
 }
 
-footer{
+footer {
   height: 254px;
   background: black;
   padding-top: 61px;
 }
-.footer-top{
-  display:flex;
+
+.footer-top {
+  display: flex;
   justify-content: space-between;
-  margin-left:110px;
+  margin-left: 110px;
   margin-right: 140px;
 }
-.footer-list{
+
+.footer-list {
   display: flex;
 }
-.footer-list-element{
+
+.footer-list-element {
   margin-left: 20px;
 }
-.footer-list-element p{
+
+.footer-list-element p {
   font-family: 'Oswald';
   font-style: normal;
   font-weight: 400;
@@ -505,45 +564,54 @@ footer{
   cursor: pointer;
   transition: 0.3s;
 }
-.footer-list-element:hover p{
-  color:#9c9c9c;
+
+.footer-list-element:hover p {
+  color: #9c9c9c;
   transition: 0.3s;
 }
-.footer-social{
-  display:flex;
+
+.footer-social {
+  display: flex;
   justify-content: right;
   margin-right: 188px;
   margin-top: 20px;
 }
-.footer-social-element{
+
+.footer-social-element {
   border-radius: 25px;
   width: 50px;
   height: 50px;
   margin-left: 4px;
 }
-.instagram svg{
+
+.instagram svg {
   fill: white;
   transition: 0.3s;
 }
-.instagram:hover svg{
+
+.instagram:hover svg {
   fill: rgb(212, 107, 9);
   transition: 0.3s;
   cursor: pointer;
 }
-.twitter svg{
+
+.twitter svg {
   fill: white;
   transition: 0.3s;
 }
-.twitter:hover svg{
+
+.twitter:hover svg {
   fill: #00acee;
   transition: 0.3s;
   cursor: pointer;
 }
-.facebook svg{
+
+.facebook svg {
   fill: white;
   transition: 0.3s;
 }
-.facebook:hover svg{
+
+.facebook:hover svg {
   fill: #3b5998;
   transition: 0.3s;
   cursor: pointer;
@@ -551,37 +619,46 @@ footer{
 
 
 
-/* AUTH */
 
+/* Ауф */
 
-
-.auth-body{
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
   width: 100%;
-  height: 900px;
-  left: 0px;
-  top: 100px;
-  background: url(./img/auth-back.jpg);
+}
+
+section {
+  background-image: url('./img/wallp.jpg');
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+}
+
+.wrapper {
   display: flex;
   justify-content: center;
-  padding-top: 15%;
+  align-items: center;
+  padding-top: 115px;
+  padding-bottom: 115px;
 }
-.reg-div{
+
+form {
+  display: flex;
+  justify-content: center;
+  background-color: black;
   width: 458px;
   height: 532px;
   background: #000000;
   box-shadow: 0px 4px 17px 17px rgba(0, 0, 0, 0.6);
   border-radius: 30px;
+  padding-top: 67px;
+  padding-bottom: 54px;
 }
-.reg-top{
-  display: flex;
-  justify-content: center;
-  margin-top:67px;
-}
-.reg-top p{
+
+.text {
+  text-align: center;
   font-family: 'Roboto';
   font-style: normal;
   font-weight: 400;
@@ -589,21 +666,76 @@ footer{
   line-height: 60px;
   letter-spacing: 1.65px;
   color: #FFFFFF;
+  margin-top: 0;
+  margin-bottom: 0;
 }
-.input-containers{
-  width: 273px;
-  margin: auto;
+
+.reg-input{
+  min-width: 273px;
+  min-height: 40px;
+  border-radius: 7px;
+  margin-bottom: 9px;
+  padding: 0 16px;
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 12px;
+  color: #403A4B;
 }
-.input-container-element{
-  width:273px;
-  margin: auto;
-  background-color: #00acee;
+.reg-input:last-child {
+  margin-bottom: 0px;
 }
-.input-caption p{
-  color: white;
+
+.reg-input::placeholder {
+  font-family: 'Lora';
+  font-style: normal;
+  font-weight: 400;
+  line-height: 13px;
+  color: rgba(64, 58, 75, 0.6);
+  transition: 0.2s;
 }
-.input-itself{
-  float: none;
-  width: 273px;
-  margin:0 auto;
+.reg-input:focus{
+  outline: 0;
+}
+.reg-input:focus::placeholder{
+  font-size: 9px;
+  transform: translateY(-12px);
+  transition: all 0.2s; 
+}
+
+.button {
+  margin-top: 21px;
+  border-radius: 4px;
+  color: #FFFFFF;
+  font-family: 'HelveticaNeue';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 14px;
+  text-align: center;
+  text-transform: uppercase;
+  color: #FFFFFF;
+  background: #FF0000;
+  border-radius: 7px;
+  border-color: #FF0000;
+  cursor: pointer;
+}
+
+.buttons {
+  display: inline-block;
+}
+
+.pas {
+  color: #FFFFFF;
+  text-align: center;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 20px;
+}
+
+.aunt {
+  height: 362px;
 }
