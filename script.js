@@ -2,6 +2,7 @@ const posterLogo = document.getElementById("posterLogo");
 const characterTextNButton = document.getElementById("characterTextNButton");
 const bestiaryTextNButton = document.getElementById("bestiaryTextNButton");
 const diceTextNButton = document.getElementById("diceTextNButton");
+const mergeDiv = document.getElementById("mergeDiv");
 // const characterButton = document.getElementById("characterButton");
 // const characterText = document.getElementById("characterText");
 
@@ -10,15 +11,6 @@ const options = {
   threshold: 0.1,
   rootMargin: '0px'
 }
-
-// const observer = new IntersectionObserver(entries => {
-//   // перевірка чи елемент потрапив у зону видимості
-//   if (entries[0].isIntersecting) {
-//     // додавання класу, який показує елемент
-//     posterLogo.classList.add("show-down");
-//     characterTextNButton.classList.add("show-left");
-//   }
-// });
 
 
 const observerDown = new IntersectionObserver(function(entries, observer) {
@@ -52,6 +44,7 @@ observerDown.observe(posterLogo);
 observerLeft.observe(characterTextNButton);
 observerRight.observe(bestiaryTextNButton);
 observerLeft.observe(diceTextNButton);
+observerDown.observe(mergeDiv);
 
 // observerLeft.observe(characterButton);
 // observerLeft.observe(characterText);
