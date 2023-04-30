@@ -1,0 +1,153 @@
+header {
+    display: flex;
+    justify-content: space-between;
+    background-color: black;
+    height: 100px;
+    align-items: center;
+  }
+  
+  .header-frame {
+    width: 1200px;
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+    height: 60px;
+  }
+  
+  .header-nav {
+    display: flex;
+  }
+  
+  .header-logo {
+    position: relative;
+  }
+  
+  .header-nav p {
+    margin-left: 32px;
+    margin-top: 20px;
+    color: white;
+    font-family: 'Orbitron', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 20px;
+  }
+  
+  .header-nav a {
+    text-decoration: none;
+  }
+  
+  .header-nav-element {
+    position: relative;
+    text-decoration: none;
+  }
+  
+  .header-nav-element p {
+    position: relative;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  
+  .header-nav-element::after {
+    content: '';
+    position: absolute;
+    width: 0%;
+    height: 3px;
+    background: red;
+    top: 115%;
+    left: 51%;
+    transform: translate(-50%, 0%);
+    transition: 0.3s;
+  }
+  
+  .header-nav-element:hover::after {
+    width: 100%;
+  }
+
+/*--------------------------------------------------*/
+
+footer {
+    height: 254px;
+    background: black;
+    padding-top: 61px;
+  }
+  
+  .footer-top {
+    display: flex;
+    justify-content: space-between;
+    margin-left: 110px;
+    margin-right: 140px;
+  }
+  
+  .footer-list {
+    display: flex;
+  }
+  
+  .footer-list-element {
+    margin-left: 20px;
+  }
+  
+  .footer-list-element p {
+    font-family: 'Oswald';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 22px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: #FFFFFF;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  
+  .footer-list-element:hover p {
+    color: #9c9c9c;
+    transition: 0.3s;
+  }
+  
+  .footer-social {
+    display: flex;
+    justify-content: right;
+    margin-right: 188px;
+    margin-top: 20px;
+  }
+  
+  .footer-social-element {
+    border-radius: 25px;
+    width: 50px;
+    height: 50px;
+    margin-left: 4px;
+  }
+  
+  .instagram svg {
+    fill: white;
+    transition: 0.3s;
+  }
+  
+  .instagram:hover svg {
+    fill: rgb(212, 107, 9);
+    transition: 0.3s;
+    cursor: pointer;
+  }
+  
+  .twitter svg {
+    fill: white;
+    transition: 0.3s;
+  }
+  
+  .twitter:hover svg {
+    fill: #00acee;
+    transition: 0.3s;
+    cursor: pointer;
+  }
+  
+  .facebook svg {
+    fill: white;
+    transition: 0.3s;
+  }
+  
+  .facebook:hover svg {
+    fill: #3b5998;
+    transition: 0.3s;
+    cursor: pointer;
+  }
