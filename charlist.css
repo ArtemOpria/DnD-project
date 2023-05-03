@@ -1,0 +1,69 @@
+.charlist-container {
+    width: 100%;
+    min-height: 900px;
+    background-image: url(img/charlist-background.jpg);
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+}
+
+.charlist-itself {
+    padding-top: 109px;
+    padding-bottom: 49px;
+}
+
+.charlist-element {
+    display: flex;
+    justify-content: space-between;
+    width: 796px;
+    height: 140px;
+    background: rgba(1, 0, 0, 0.75);
+    border: 1px solid #FFFFFF;
+    border-radius: 40px;
+    margin-bottom: 60px;
+    padding-left: 38px;
+    padding-right: 64px;
+}
+
+.charlist-element img {
+    width: 90px;
+    height: 90px;
+    margin-top: 27px;
+}
+
+.charlist-text p {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 20px;
+    text-align: center;
+    color: #FFFFFF;
+}
+
+.charlist-text-interval{
+    margin-top: 35px;
+    margin-bottom: 17px;
+}
+.charlist-new img{
+    width: 45px;
+    height: 40px;
+    margin-top: 50px;
+    margin-right: 70px;
+    border: 0px solid rgba(255, 255, 255, 1);
+}
+
+.charlist-new p{
+    margin-left: 70px;
+    margin-top: 60px;
+}
+.charlist-new:hover .charlist img{
+    border: 1px solid rgba(255, 255, 255, 1);
+}
+.acc-svg-container{
+    margin-top: 10px;
+    margin-left: 190px;
+}
