@@ -51,7 +51,6 @@ const observerRight = new IntersectionObserver(function(entries, observer) {
 }, options);
 
 observerDown.observe(posterLogo);
-observerDownDelay.observe(posterBot);
 observerLeft.observe(characterTextNButton);
 observerRight.observe(bestiaryTextNButton);
 observerLeft.observe(diceTextNButton);

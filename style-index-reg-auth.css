@@ -89,12 +89,12 @@
   color: #fff;
   background-color: transparent;
   border: 3px solid #FF0202;
-  -webkit-transition: all .15s ease-in-out;
-  transition: all .15s ease-in-out;
+  transition: 0.3s;
   color: #FF0202;
 }
 
 .character-button:hover {
+  transition: 0.3s;
   box-shadow: 0 0 10px 0 #FF0202 inset, 0 0 20px 2px #FF0202;
   border: 3px solid #FF0202;
 }
