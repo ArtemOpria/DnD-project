@@ -1,23 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Oswald&family=Inter&family=Poppins&family=Roboto&display=swap');
-/* @font-face {
-  font-family: Elder Futhark;
-  src: url('path/to/elder-futhark.ttf');
-} */
-
-
-/* ^^^^^^^^  */
-/*  Шрифти   */
-
-
-/* body::-webkit-scrollbar-track {border-radius: 4px;}
-body::-webkit-scrollbar {width: 6px;}
-body::-webkit-scrollbar-thumb {border-radius: 4px;background: #f0f2f5;}
-body:hover::-webkit-scrollbar-thumb {background: #d60000;} */
-
-
-/* ^^^^^^^^^^  */
-/*  Скролбар   */
-
+@import url('https://fonts.googleapis.com/css2?family=Oswald&family=PT+Sans&family=Inter&family=Poppins&family=Roboto&display=swap');
 
 *,
 *::before,

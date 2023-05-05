@@ -2,6 +2,7 @@ const posterLogo = document.getElementById("posterLogo");
 const characterTextNButton = document.getElementById("characterTextNButton");
 const bestiaryTextNButton = document.getElementById("bestiaryTextNButton");
 const diceTextNButton = document.getElementById("diceTextNButton");
+const mergeDiv = document.getElementById("mergeDiv");
 // const characterButton = document.getElementById("characterButton");
 // const characterText = document.getElementById("characterText");
 
@@ -43,6 +44,7 @@ observerDown.observe(posterLogo);
 observerLeft.observe(characterTextNButton);
 observerRight.observe(bestiaryTextNButton);
 observerLeft.observe(diceTextNButton);
+observerDown.observe(mergeDiv);
 
 // observerLeft.observe(characterButton);
 // observerLeft.observe(characterText);
