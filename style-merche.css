@@ -1,3 +1,7 @@
+header{
+    position: relative;
+    z-index:2;
+}
 body{
     background: black;
 }
@@ -32,9 +36,10 @@ body{
 .poster-bot {
     margin: 0 auto;
     display: flex;
-    margin-top:270px;
+    margin-top:300px;
     width: 730px;
     justify-content: center;
+    opacity: 0;
 }
 
 .poster-bot p {
@@ -43,7 +48,6 @@ body{
     font-weight: 400;
     font-size: 15px;
     line-height: 150%;
-    /* or 22px */
 
     text-align: center;
     text-transform: uppercase;
@@ -52,12 +56,11 @@ body{
 }
 
 .poster-big {
-    padding-top: 228px;
-    margin: 0 auto 0 auto;
-    width: 588px;
+    padding-top: 360px;
+    display: flex;
+    justify-content: center;
     height: 206px;
-    opacity: 1;
-    margin-bottom: -120px;
+    opacity: 0;
 }
 
 .poster-big p {
@@ -82,6 +85,17 @@ body{
     transition: opacity 1s, transform 1s;
     transition-delay: 0.6s;
 }
+.show-left {
+    opacity: 1 !important;
+    transition: opacity 2.5s, transform 2.5s;
+  } 
+.show-right {
+    opacity: 1 !important;
+    transition: opacity 1s, transform 1s;
+  }
+  .banner-content{
+    opacity: 0;
+} 
 .merche-dice{
     padding-top: 68px;
     padding-bottom: 19px;

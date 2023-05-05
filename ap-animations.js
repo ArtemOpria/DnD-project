@@ -1,9 +1,3 @@
-const posterBig = document.getElementById("posterBig");
-const posterBot = document.getElementById("posterBot");
-const bannerOne = document.getElementById("bannerOne");
-const bannerTwo = document.getElementById("bannerTwo");
-const bannerThree = document.getElementById("bannerThree");
-
 const options = {
   root: null,
   threshold: 0.1,
@@ -46,10 +40,3 @@ const observerRight = new IntersectionObserver(function(entries, observer) {
     }
   });
 }, options);
-
-observerDown.observe(posterBig);
-observerDownDelay.observe(posterBot);
-observerLeft.observe(bannerOne);
-observerLeft.observe(bannerTwo);
-observerLeft.observe(bannerThree);
-  

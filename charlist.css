@@ -1,3 +1,7 @@
+header{
+    position: relative;
+    z-index: 2;
+}
 .charlist-container {
     width: 100%;
     min-height: 900px;
@@ -26,14 +30,26 @@
     margin-bottom: 60px;
     padding-left: 38px;
     padding-right: 64px;
+    cursor: pointer;
+    transition:0.3s !important;
 }
-
+.charlist-element:hover{
+    box-shadow: 0px 0px 25px -1px rgba(255,255,255,1);
+    transition:0.3s !important;
+}
+.charlist-element:hover img{
+    transition:0.3s !important;
+    transform: scale(1.4);
+}
 .charlist-element img {
+    transition:0.3s !important;
     width: 90px;
     height: 90px;
     margin-top: 27px;
 }
-
+.badge-container{
+    position: relative;
+}
 .charlist-text p {
     font-family: 'Inter';
     font-style: normal;
@@ -71,9 +87,13 @@
 
 .user_info_display{
     display: none;
+    opacity: 0;
 }
 
 .user_info_window{
+    z-index: 1;
+    transition: 1s !important;
+    opacity: 1;
     position: absolute;
     left: -150px;
     top: 100px;
@@ -83,7 +103,6 @@
 
     background: url("img/user_info_img.png");
     box-shadow: 0px 4px 17px 17px rgba(0, 0, 0, 0.6);
-    border-radius: 20px;
 
     border-radius: 25px;
     
@@ -113,6 +132,7 @@
 }
 
 .user_info_window_button{
+    cursor: pointer;
     margin-left: 5%;
     margin-right: 5%;
     margin-top: 10%;
@@ -125,4 +145,8 @@
 
     text-align: center;
     color: #FFFFFF;
+    transition: 0.3s;
+}
+.user_info_window_button:hover{
+    background: rgb(97, 15, 15);
 }
