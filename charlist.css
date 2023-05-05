@@ -64,63 +64,6 @@
     border: 1px solid rgba(255, 255, 255, 1);
 }
 .acc-svg-container{
-    position: relative;
-    z-index: 10;
     margin-top: 10px;
     margin-left: 190px;
-}
-
-
-.user_info_window{
-    position: absolute;
-    left: -150px;
-    top: 100px;
-
-    width: 300px;
-    height: 204px;
-
-    background: url("img/user_info_img.png");
-    box-shadow: 0px 4px 17px 17px rgba(0, 0, 0, 0.6);
-    border-radius: 20px;
-
-    border-radius: 25px;
-    
-}
-
-
-.user_info_window_text{
-    position: relative;
-    height: 46px;
-    left: 30%;
-    right: 20.8%;
-    
-    top: 50%;
-    /* top: calc(50% - 46px/2 - 60px); */
-
-    font-family: 'Zen Kaku Gothic Antique';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 15px;
-    line-height: 55px;
-    /* or 367% */
-
-    letter-spacing: 1.65px;
-
-    color: #FFFFFF;
-
-}
-
-.user_info_window_button{
-    margin-left: 5%;
-    margin-right: 5%;
-    margin-top: 10%;
-
-    width: 50%;
-
-    background: rgb(199, 24, 24);
- 
-    border-radius: 5px;
-
-    text-align: center;
-    color: #FFFFFF;
 }
