@@ -1,4 +1,5 @@
 const posterLogo = document.getElementById("posterLogo");
+const posterBot = document.getElementById("posterBot");
 const characterTextNButton = document.getElementById("characterTextNButton");
 const bestiaryTextNButton = document.getElementById("bestiaryTextNButton");
 const diceTextNButton = document.getElementById("diceTextNButton");
@@ -17,6 +18,15 @@ const observerDown = new IntersectionObserver(function(entries, observer) {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
       entry.target.classList.add('show-down');
+      observer.unobserve(entry.target);
+    }
+  });
+}, options);
+
+const observerDownDelay = new IntersectionObserver(function(entries, observer) {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('show-down-delay');
       observer.unobserve(entry.target);
     }
   });
@@ -41,6 +51,7 @@ const observerRight = new IntersectionObserver(function(entries, observer) {
 }, options);
 
 observerDown.observe(posterLogo);
+observerDownDelay.observe(posterBot);
 observerLeft.observe(characterTextNButton);
 observerRight.observe(bestiaryTextNButton);
 observerLeft.observe(diceTextNButton);

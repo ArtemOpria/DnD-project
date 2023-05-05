@@ -44,6 +44,7 @@ const options = {
     });
   }, options);
 
-observerDown.observe("posterBig");
-observerDownDelay.observe("posterBot");
+observerDown.observe(posterBig);
+console.log("test");
+observerDownDelay.observe(posterBot);
   
