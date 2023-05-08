@@ -1,0 +1,34 @@
+body{
+    background-color: black;
+}
+.create-char-top{
+    width: 100%;
+    height: 907px;
+    background: url("img/backgroud-create-char-1.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.create-char-caption{
+    font-family: 'Oswald';
+font-style: normal;
+font-weight: 400;
+font-size: 50px;
+line-height: 22px;
+padding-top: 103px;
+text-align: center;
+letter-spacing: 1px;
+
+color: #FFFFFF;
+}
+.create-char-question{
+    font-family: 'Oswald';
+font-style: normal;
+font-weight: 400;
+font-size: 40px;
+line-height: 20px;
+/* identical to box height, or 50% */
+
+
+color: #FFFFFF;
+}
