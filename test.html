@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='test.css'>
+</head>
+<body>
+  <div class="test">
+    <div class="test-column">
+      <input type="checkbox" id="fb" name="answer1" value="Facebook">
+      <label for="fb"><span></span>Аркана</label>
+      <input type="checkbox" id="tw" name="answer1" value="Twitter">
+      <label for="tw"><span></span>Обман</label>
+      <input type="checkbox" id="in1" name="answer1" value="LinkedIn">
+      <label for="in1"><span></span>Медицина</label>
+    </div>
+    <div class="test-column">
+      <input type="checkbox" id="in2" name="answer1" value="LinkedIn">
+      <label for="in2"><span></span>Медицина</label>
+      <input type="checkbox" id="in3" name="answer1" value="LinkedIn">
+      <label for="in3"><span></span>Медицина</label>
+      <input type="checkbox" id="in4" name="answer1" value="LinkedIn">
+      <label for="in4"><span></span>Медицина</label>
+    </div>
+  </div>
+  <script>
+    const checkboxes = document.querySelectorAll('.test-column input[type="checkbox"]');
+    checkboxes.forEach(checkbox => {
+      checkbox.addEventListener('click', () => {
+        const checkedCount = document.querySelectorAll('.test-column input[type="checkbox"]:checked').length;
+        if (checkedCount > 3) {
+          checkbox.checked = false;
+        }
+      });
+    });
+  </script>
+</body>
+</html>
