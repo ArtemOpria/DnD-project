@@ -1,5 +1,5 @@
 main {
-  background: url("/img/background-bestiary.png");
+  background: url("img/background-bestiary.png");
   width: 100%;
   min-height: 1500px;
   background-attachment: fixed;

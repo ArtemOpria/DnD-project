@@ -266,7 +266,7 @@
                         <div class="create-char-start-prof">
                             <div class="create-char-start-prof-text">Оберіть 1 зброю:</div>
                             <div class="test less-width">
-                                <div class="test-column">
+                                <div class="test-column-1">
                                   <input type="checkbox" id="handaxe" name="answer1" value="handaxe">
                                   <label for="handaxe" nowrap><span></span>Ручна сокира</label>
                                   <input type="checkbox" id="simpleweapon" name="answer1" value="simpleweapon">
@@ -279,7 +279,7 @@
                         <div class="create-char-start-prof">
                             <div class="create-char-start-prof-text">Оберіть 1 обладунок:</div>
                             <div class="test">
-                                <div class="test-column">
+                                <div class="test-column-2">
                                   <input type="checkbox" id="scalemail" name="answer1" value="scalemail">
                                   <label for="scalemail" nowrap><span></span>Лускатий обладунок</label>
                                   <input type="checkbox" id="stugleather" name="answer1" value="stugleather">
@@ -292,7 +292,7 @@
                         <div class="create-char-start-prof">
                             <div class="create-char-start-prof-text">Оберіть 1 спорядження:</div>
                             <div class="test less-width">
-                                <div class="test-column">
+                                <div class="test-column-3">
                                   <input type="checkbox" id="prayerbook" name="answer1" value="prayerbook">
                                   <label for="prayerbook" nowrap><span></span>Молитовник</label>
                                   <input type="checkbox" id="holysymbol" name="answer1" value="holysymbol">
@@ -359,17 +359,7 @@
     <script src="script-scrollbar.js"></script>
     <script src="script-header.js"></script>
     <script src="script-create-char-random.js"></script>
-    <script>
-        const checkboxes = document.querySelectorAll('.test-column input[type="checkbox"]');
-    checkboxes.forEach(checkbox => {
-      checkbox.addEventListener('click', () => {
-        const checkedCount = document.querySelectorAll('.test-column input[type="checkbox"]:checked').length;
-        if (checkedCount > 3) {
-          checkbox.checked = false;
-        }
-      });
-    });
-    </script>
+    <script src="script-create-char.js"></script>
 </body>
 
 </html>
