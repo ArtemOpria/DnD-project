@@ -1,67 +1,56 @@
-body{
-  background-color: darkgreen;
-}
-.test {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  width: 275px;
-  height: 189px;
-}
 
-.test-column {
-  flex-basis: 49%;
-}
-
-.test-column label {
-  display: block;
-}
-
-/* для стилізації checkbox */
-.test-column input[type="checkbox"] {
-  display: none;
-}
-
-.test-column input[type="checkbox"] + label {
-  position: relative;
-  padding-left: 40px;
-  cursor: pointer;
-  font-family: 'Inter';
-font-style: normal;
-font-weight: 400;
-font-size: 15px;
-line-height: 40px;
-/* identical to box height, or 133% */
-
-transition: 0.3s;
-color: #FFFFFF;
-}
-
-.test-column input[type="checkbox"] + label span {
-  margin-top: 5px;
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 25px;
-  height: 25px;
-  border: 2px solid #ff0000;
+  body {
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+  }
   
-}
-
-.test-column input[type="checkbox"]:checked + label span:before {
-  content: "\2714";
-  position: absolute;
-  top: 30%;
-  left: 40%;
-  transform: translate(-50%, -50%);
-  color: #666;
-  transform: scale(3.5);
-  font-size: 10px;
-  line-height: 1;
-  color: #ff0000;
+  header {
+    background-color: black;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem;
+  }
   
-}
-.test-column input[type="checkbox"]:hover + label{
-  color: #ff0000;
-  transition: 0.3s;
-}
+  h1 {
+    margin: 0;
+  }
+  
+  form {
+    display: flex;
+    align-items: center;
+  }
+  
+  .search-input{
+    position: relative;
+    color:white;
+    border: none;
+    border-radius: 0.25rem;
+    padding: 0.5rem;
+    background-color: black;
+  }
+  .search-input{
+    outline: 0;
+  }
+  
+  button[type="submit"] {
+    background-color: #fff;
+    border: none;
+    border-radius: 0.25rem;
+    color: #333;
+    cursor: pointer;
+    margin-left: 0.5rem;
+    padding: 0.5rem;
+  }
+  
+  main {
+    padding: 1rem;
+  }
+  
+  footer {
+    background-color: #333;
+    color: #fff;
+    padding: 1rem;
+    text-align: center;
+  }

@@ -8,34 +8,60 @@
     <link rel='stylesheet' type='text/css' media='screen' href='test.css'>
 </head>
 <body>
-  <div class="test">
-    <div class="test-column">
-      <input type="checkbox" id="fb" name="answer1" value="Facebook">
-      <label for="fb"><span></span>Аркана</label>
-      <input type="checkbox" id="tw" name="answer1" value="Twitter">
-      <label for="tw"><span></span>Обман</label>
-      <input type="checkbox" id="in1" name="answer1" value="LinkedIn">
-      <label for="in1"><span></span>Медицина</label>
-    </div>
-    <div class="test-column">
-      <input type="checkbox" id="in2" name="answer1" value="LinkedIn">
-      <label for="in2"><span></span>Медицина</label>
-      <input type="checkbox" id="in3" name="answer1" value="LinkedIn">
-      <label for="in3"><span></span>Медицина</label>
-      <input type="checkbox" id="in4" name="answer1" value="LinkedIn">
-      <label for="in4"><span></span>Медицина</label>
-    </div>
+  <!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>DND Bestiary</title>
+  </head>
+  <body>
+    <header>
+      <h1>DND Bestiary</h1>
+      <form>
+        <input type="text" id="search" placeholder="Пошук..." class="search-input">
+        <button type="submit">Search</button>
+      </form>
+    </header>
+    <main>
+  <div class="monster">
+    <h2 class="name">Dragon</h2>
+    <p class="description">A powerful and fearsome creature with wings and a breath weapon.</p>
   </div>
-  <script>
-    const checkboxes = document.querySelectorAll('.test-column input[type="checkbox"]');
-    checkboxes.forEach(checkbox => {
-      checkbox.addEventListener('click', () => {
-        const checkedCount = document.querySelectorAll('.test-column input[type="checkbox"]:checked').length;
-        if (checkedCount > 3) {
-          checkbox.checked = false;
-        }
-      });
-    });
-  </script>
+  <div class="monster">
+    <h2 class="name">Goblin</h2>
+    <p class="description">A small and sneaky humanoid with green skin and a love of mischief.</p>
+  </div>
+  <div class="monster">
+    <h2 class="name">Beholder</h2>
+    <p class="description">A bizarre floating creature with multiple eyes and deadly eye rays.</p>
+  </div>
+  <!-- Add more monsters here -->
+</main>
+    <footer>
+      <p>&copy; 2023 Your Name</p>
+    </footer>
+    <script src="script.js"></script>
+  </body>
+</html>
+
+<script>
+const searchInput = document.querySelector('#search');
+const monsters = document.querySelectorAll('.monster');
+
+searchInput.addEventListener('input', () => {
+  const searchText = searchInput.value.toLowerCase();
+
+  monsters.forEach(monster => {
+    const name = monster.querySelector('.name').textContent.toLowerCase();
+
+    if (name.includes(searchText)) {
+      monster.style.display = '';
+    } else {
+      monster.style.display = 'none';
+    }
+  });
+});
+</script>
+
 </body>
 </html>
