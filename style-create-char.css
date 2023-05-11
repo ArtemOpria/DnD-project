@@ -11,12 +11,23 @@ body {
     background-size: cover;
 }
 
+.header{
+  position: relative;
+  z-index: 2;
+}
+
 .create-char-top-container {
     width: 1200px;
     margin: 0 auto;
 }
 
+.create-char-caption-main{
+  position: absolute;
+}
+
 .create-char-caption {
+    position: relative;
+    top: 120px;
     font-family: 'Oswald';
     font-style: normal;
     font-weight: 400;
@@ -27,6 +38,7 @@ body {
     letter-spacing: 1px;
 
     color: #FFFFFF;
+    opacity: 0;
 }
 
 .create-char-question {
@@ -36,10 +48,11 @@ body {
     font-weight: 400;
     font-size: 40px;
     line-height: 50px;
+    margin-left: -120px;
     /* identical to box height, or 50% */
 
-
     color: #FFFFFF;
+    opacity: 0;
 }
 
 .create-char-input-container {
@@ -321,25 +334,43 @@ margin-top: 20px;
     height: 788px;
     padding-top: 49px;
 }
+
 .create-char-stats-caption{
     font-family: 'Oswald';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 40px;
+  line-height: 70px;
+  color: #FFFFFF;
+  margin-left: -120px;
+  opacity: 0;
+}
+
+.create-char-stats-caption2{
+padding-top: 163px;
+  font-family: 'Oswald';
 font-style: normal;
 font-weight: 400;
 font-size: 40px;
 line-height: 70px;
 color: #FFFFFF;
+margin-left: -120px;
+opacity: 0;
 }
+
 .create-char-stats-container{
     margin-top: 50px;
     margin-bottom: 25px;
     display: flex;
     justify-content: space-evenly;
 }
+
 .create-char-stats-element{
     display: flex;
     flex-direction: column;
     justify-content: center;
 }
+
 .create-char-stats-text{
     font-family: 'Roboto';
 font-style: normal;
@@ -367,9 +398,6 @@ color: #FFFFFF;
     background-size: cover;
 }
 
-.some-margin{
-    padding-top: 163px;
-}
 .less-width{
     width: 200px;
 }
@@ -393,16 +421,23 @@ color: #FFFFFF;
     color: #FFFFFF;
 }
 
+.create-char-start-prof{
+  margin-left: 50px;
+}
+
 .test {
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     justify-content: space-between;
     width: 275px;
     height: 189px;
+    margin-left: -10px;
+
   }
   
   .test-column, .test-column {
     flex-basis: 49%;
+    padding-left: 10px;
   }
   
   .test-column label {
@@ -460,8 +495,9 @@ color: #FFFFFF;
 
 
 
-
-
+.some-margin{
+  margin-left: 10px;
+}
 
 
   .test-column-1, .test-column {
@@ -682,4 +718,24 @@ margin-top: 20px;
 }
 .submit-button input:focus{
     outline: 0;
+}
+
+
+
+.show-down {
+  opacity: 1 !important;
+  transform: translateY(-120px) !important;
+  transition: opacity 1s, transform 1s;
+}
+
+.show-left {
+  opacity: 1 !important;
+  transform: translateX(120px) !important;
+  transition: opacity 1s, transform 1s;
+}
+
+.show-right {
+  opacity: 1 !important;
+  transform: translateX(-120px) !important;
+  transition: opacity 1s, transform 1s;
 }

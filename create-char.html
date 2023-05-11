@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/x-icon" href="./img/DnD-ico.ico">
-    <title>Вхід</title>
+    <title>Створення персонажу</title>
     <link rel="stylesheet" href="style-reset.css">
     <link rel="stylesheet" href="style-create-char.css">
     <link rel="stylesheet" href="header-footer-style.css">
@@ -22,13 +22,13 @@
         <div class="header-frame">
             <div class="header-logo"><a href="index.html"><img src="./img/logo.png"></a></div>
             <div class="header-nav">
-                <a href="#">
+                <a href="bestiary.html">
                     <p class="header-nav-element">Бестіарій</p>
                 </a>
-                <a href="/dice-roller-master/index.html">
+                <a href="dice-roller-master/index.html">
                     <p class="header-nav-element">Дайси</p>
                 </a>
-                <a href="#">
+                <a href="merche.html">
                     <p class="header-nav-element">Мерч</p>
                 </a>
 
@@ -76,10 +76,12 @@
     <main>
         <div class="create-char-top">
             <div class="create-char-top-container">
-                <div class="create-char-caption">
-                    <p>Створення персонажу</p>
+                <div>
+                    <div class="create-char-caption" id="id-create-char-caption">
+                        <p>Створення персонажу</p>
+                    </div>
                 </div>
-                <div class="create-char-question">
+                <div class="create-char-question" id="id-create-char-question">
                     <p>Які у вас ім'я, раса, клас<br>та рівень?</p>
                 </div>
                 <div class="create-char-input-container">
@@ -197,7 +199,7 @@
         
         <div class="create-char-stats">
             <div class="create-char-top-container">
-                <div class="create-char-stats-caption">Значення навичок:</div>
+                <div class="create-char-stats-caption" id="id-create-char-stats-caption">Значення навичок:</div>
                 <div class="create-char-stats-container">
                     <div class="create-char-stats-element">
                         <div class="create-char-stats-text">Сила</div>
@@ -237,7 +239,7 @@
 
         <div class="create-char-bot">
             <div class="create-char-top-container">
-                <div class="create-char-stats-caption some-margin">Оберіть передісторію<br>та навички & спорядження:</div>
+                <div class="create-char-stats-caption2" id="id-create-char-stats-caption some-margin">Оберіть<br> навички та спорядження:</div>
                 <div class="create-char-start-container">
                     <div class="create-char-start-container-element">
                         <div class="create-char-start-prof">
@@ -245,19 +247,37 @@
                             <div class="test">
                                 <div class="test-column">
                                   <input type="checkbox" id="Arcane" name="answer1" value="Arcane">
-                                  <label for="Arcane"><span></span>Аркана</label>
-                                  <input type="checkbox" id="tw" name="answer1" value="Deception">
-                                  <label for="tw"><span></span>Обман</label>
-                                  <input type="checkbox" id="in1" name="answer1" value="Medicine">
-                                  <label for="in1"><span></span>Медицина</label>
+                                  <label for="Arcane"><span></span>Магія</label>
+
+                                  <input type="checkbox" id="Deception" name="answer1" value="Deception">
+                                  <label for="Deception"><span></span>Обман</label>
+
+                                  <input type="checkbox" id="History" name="answer1" value="History">
+                                  <label for="History"><span></span>Історія</label>
+
+                                  <input type="checkbox" id="Sleight_of_hand" name="answer1" value="Sleight_of_hand">
+                                  <label for="Sleight_of_hand"><span></span>Легка рука</label>
+
+                                  <input type="checkbox" id="Medicine" name="answer1" value="Medicine">
+                                  <label for="Medicine"><span></span>Медицина</label>
                                 </div>
                                 <div class="test-column">
-                                  <input type="checkbox" id="in2" name="answer1" value="LinkedIn">
-                                  <label for="in2"><span></span>Медицина</label>
-                                  <input type="checkbox" id="in3" name="answer1" value="LinkedIn">
-                                  <label for="in3"><span></span>Медицина</label>
-                                  <input type="checkbox" id="in4" name="answer1" value="LinkedIn">
-                                  <label for="in4"><span></span>Медицина</label>
+                                  
+                                  <input type="checkbox" id="Nature" name="answer1" value="Nature">
+                                  <label for="Nature"><span></span>Природа</label>
+
+                                  <input type="checkbox" id="Religion" name="answer1" value="Religion">
+                                  <label for="Religion"><span></span>Релігія</label>
+
+                                  <input type="checkbox" id="Investigation" name="answer1" value="Investigation">
+                                  <label for="Investigation"><span></span>Розслідування</label>
+
+                                  <input type="checkbox" id="Persuasiveness" name="answer1" value="Persuasiveness">
+                                  <label for="Persuasiveness"><span></span>Переконливість</label>
+
+                                  <input type="checkbox" id="Animal_taming" name="answer1" value="Animal_taming">
+                                  <label for="Animal_taming"><span></span>Приборкання тварин</label>
+
                                 </div>
                               </div>
                         </div>
@@ -266,11 +286,18 @@
                         <div class="create-char-start-prof">
                             <div class="create-char-start-prof-text">Оберіть 1 зброю:</div>
                             <div class="test less-width">
-                                <div class="test-column-1">
-                                  <input type="checkbox" id="handaxe" name="answer1" value="handaxe">
-                                  <label for="handaxe" nowrap><span></span>Ручна сокира</label>
-                                  <input type="checkbox" id="simpleweapon" name="answer1" value="simpleweapon">
-                                  <label for="simpleweapon" nowrap><span></span>Проста зброя</label>
+                                <div class="test-column-1 some-margin">
+                                  <input type="checkbox" id="Spear" name="answer1" value="Spear">
+                                  <label for="Spear" nowrap><span></span>Спис</label>
+
+                                  <input type="checkbox" id="Bow" name="answer1" value="Bow">
+                                  <label for="Bow" nowrap><span></span>Лук</label>
+
+                                  <input type="checkbox" id="Bastard_sword" name="answer1" value="Bastard_sword">
+                                  <label for="Bastard_sword" nowrap><span></span>Полуторний меч</label>
+
+                                  <input type="checkbox" id="simple_weapon" name="answer1" value="simple_weapon">
+                                  <label for="simple_weapon" nowrap><span></span>Проста зброя</label>
                                 </div>
                               </div>
                         </div>
@@ -279,11 +306,18 @@
                         <div class="create-char-start-prof">
                             <div class="create-char-start-prof-text">Оберіть 1 обладунок:</div>
                             <div class="test">
-                                <div class="test-column-2">
+                                <div class="test-column-2 some-margin">
                                   <input type="checkbox" id="scalemail" name="answer1" value="scalemail">
-                                  <label for="scalemail" nowrap><span></span>Лускатий обладунок</label>
+                                  <label for="scalemail" nowrap><span></span>Лускатий обладунок (17)</label>
+
+                                  <input type="checkbox" id="chainmail" name="answer1" value="chainmail">
+                                  <label for="chainmail" nowrap><span></span>Кольчужний обладунок (16)</label>
+
                                   <input type="checkbox" id="stugleather" name="answer1" value="stugleather">
-                                  <label for="stugleather" nowrap><span></span>Клепаний шкіряний обладунок</label>
+                                  <label for="stugleather" nowrap><span></span>Клепаний шкіряний обладунок (14)</label>
+
+                                  <input type="checkbox" id="letherman" name="answer1" value="letherman">
+                                  <label for="letherman" nowrap><span></span>Шкіряний обладунок (12)</label>
                                 </div>
                               </div>
                         </div>
@@ -292,11 +326,18 @@
                         <div class="create-char-start-prof">
                             <div class="create-char-start-prof-text">Оберіть 1 спорядження:</div>
                             <div class="test less-width">
-                                <div class="test-column-3">
+                                <div class="test-column-3 some-margin">
                                   <input type="checkbox" id="prayerbook" name="answer1" value="prayerbook">
                                   <label for="prayerbook" nowrap><span></span>Молитовник</label>
+
                                   <input type="checkbox" id="holysymbol" name="answer1" value="holysymbol">
                                   <label for="holysymbol" nowrap><span></span>Святий символ</label>
+
+                                  <input type="checkbox" id="explorerkit" name="answer1" value="explorerkit">
+                                  <label for="explorerkit" nowrap><span></span>Набір дослідника</label>
+
+                                  <input type="checkbox" id="handicrafttools" name="answer1" value="handicrafttools">
+                                  <label for="handicrafttools" nowrap><span></span>Ремісничі інструменти</label>
                                 </div>
                               </div>
                         </div>
@@ -337,6 +378,8 @@
             </div>
         </div>
     </footer>
+    <script src="script-char-create.js"></script>
+
     <script src="script-scrollbar.js"></script>
     <script src="script-header.js"></script>
     <script src="script-create-char-random.js"></script>

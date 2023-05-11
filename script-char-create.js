@@ -1,12 +1,8 @@
-const posterLogo = document.getElementById("posterLogo");
-const characterTextNButton = document.getElementById("characterTextNButton");
-const bestiaryTextNButton = document.getElementById("bestiaryTextNButton");
-const diceTextNButton = document.getElementById("diceTextNButton");
-const posterBig = document.getElementById("posterBig");
-const posterBot = document.getElementById("posterBot");
+const create_char1 = document.getElementById("id-create-char-caption");
+const create_char2 = document.getElementById("id-create-char-question");
+const create_char3 = document.getElementById("id-create-char-stats-caption");
+const create_char4 = document.getElementById("id-create-char-stats-caption some-margin");
 
-// const characterButton = document.getElementById("characterButton");
-// const characterText = document.getElementById("characterText");
 const options = {
   root: null,
   threshold: 0.1,
@@ -50,12 +46,7 @@ const observerRight = new IntersectionObserver(function(entries, observer) {
   });
 }, options);
 
-observerDown.observe(posterLogo);
-observerLeft.observe(characterTextNButton);
-observerRight.observe(bestiaryTextNButton);
-observerLeft.observe(diceTextNButton);
-observerDown.observe(posterBig);
-observerDown.observe(posterBot);
-
-// observerLeft.observe(characterButton);
-// observerLeft.observe(characterText);
+observerDown.observe(create_char1);
+observerLeft.observe(create_char2);
+observerLeft.observe(create_char3);
+observerLeft.observe(create_char4);
