@@ -1,3 +1,4 @@
+
 const options = {
   root: null,
   threshold: 0.1,
@@ -40,3 +41,13 @@ const observerRight = new IntersectionObserver(function(entries, observer) {
     }
   });
 }, options);
+
+const observerUnRight = new IntersectionObserver(function(entries, observer) {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('un-show-right');
+      observer.unobserve(entry.target);
+    }
+  });
+}, options);
+

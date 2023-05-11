@@ -70,12 +70,8 @@ header {
     margin-left: 190px;
 }
 
-.user_info_display{
-    display: none;
-    opacity: 0;
-}
-
 .user_info_window{
+    margin-left: 120px;
     z-index: 1;
     transition: 1s !important;
     opacity: 1;
@@ -90,7 +86,9 @@ header {
     box-shadow: 0px 4px 17px 17px rgba(0, 0, 0, 0.6);
 
     border-radius: 25px;
+    opacity: 0;
     
+    pointer-events: none;
 }
 
 @media (max-width: 1280px) {
@@ -230,4 +228,24 @@ footer {
 
   #id_svg{
     cursor:pointer
+  }
+
+  .show-down {
+    opacity: 1 !important;
+    transform: translateY(-120px) !important;
+    transition: opacity 1s, transform 1s !important;
+  }
+  
+  .show-left {
+    opacity: 1 !important;
+    transform: translateX(120px) !important;
+    transition: opacity 1s, transform 1s;
+  }
+  
+  .show-right {
+    opacity: 1 !important;
+    transform: translateX(-120px) !important;
+    transition: opacity 1s, transform 1s;
+    pointer-events: auto;
+
   }
