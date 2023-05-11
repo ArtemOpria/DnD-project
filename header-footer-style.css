@@ -229,23 +229,3 @@ footer {
   #id_svg{
     cursor:pointer
   }
-
-  .show-down {
-    opacity: 1 !important;
-    transform: translateY(-120px) !important;
-    transition: opacity 1s, transform 1s !important;
-  }
-  
-  .show-left {
-    opacity: 1 !important;
-    transform: translateX(120px) !important;
-    transition: opacity 1s, transform 1s;
-  }
-  
-  .show-right {
-    opacity: 1 !important;
-    transform: translateX(-120px) !important;
-    transition: opacity 1s, transform 1s;
-    pointer-events: auto;
-
-  }

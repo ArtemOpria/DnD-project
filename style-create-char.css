@@ -719,23 +719,3 @@ margin-top: 20px;
 .submit-button input:focus{
     outline: 0;
 }
-
-
-
-.show-down {
-  opacity: 1 !important;
-  transform: translateY(-120px) !important;
-  transition: opacity 1s, transform 1s;
-}
-
-.show-left {
-  opacity: 1 !important;
-  transform: translateX(120px) !important;
-  transition: opacity 1s, transform 1s;
-}
-
-.show-right {
-  opacity: 1 !important;
-  transform: translateX(-120px) !important;
-  transition: opacity 1s, transform 1s;
-}
