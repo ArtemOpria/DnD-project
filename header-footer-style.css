@@ -13,7 +13,7 @@ header {
     margin: 0 auto;
     height: 60px;
   }
-  
+
   .header-nav {
     display: flex;
   }
@@ -93,6 +93,11 @@ header {
     
 }
 
+@media (max-width: 1280px) {
+  .user_info_window{
+    left: -280px;
+  }
+}
 
 .user_info_window_text{
     position: relative;
