@@ -229,3 +229,8 @@ footer {
   #id_svg{
     cursor:pointer
   }
+
+  .a_text{
+    text-decoration: none;
+    color: white;
+  }
