@@ -5,12 +5,12 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/x-icon" href="../static/img/DnD-ico.ico">
+            <link rel="icon" type="image/x-icon" href="{{url_for('static', filename='img/DnD-ico.ico')}}">
     <title>Мерч</title>
-    <link rel="stylesheet" href="../static/css/style-reset.css">
-    <link rel="stylesheet" href="../static/css/header-footer-style.css">
-    <link rel="stylesheet" href="../static/css/style-merche.css">
-    <link rel="stylesheet" href="../static/css/style-scrollbar.css">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/style-reset.css')}}">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/header-footer-style.css')}}">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/style-merche.css')}}">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/style-scrollbar.css')}}">
 </head>
 
 <body>
@@ -20,11 +20,11 @@
     <header>
 
         <div class="header-frame">
-            <div class="header-logo"><a href="index.html"><img src="./img/logo.png"></a></div>
+            <div class="header-logo"><a href="/"><img src="{{url_for('static', filename='img/logo.png')}}"></a></div>
             <div class="header-nav">
                 <a href="bestiary/aboleth" target="_blank"><p class="header-nav-element">Бестіарій</p></a>
 
-                <a href="dice-roller-master/index.html" target="_blank"><p class="header-nav-element">Дайси</p></a>
+                <a href="dice.html" target="_blank"><p class="header-nav-element">Дайси</p></a>
                 
                 <a href="merche.html"><p class="header-nav-element">Мерч</p></a>
                 
@@ -51,21 +51,21 @@
                         <div class="head-flex"><div class="product-head"><p>Продукція</p></div></div>
                         <div class="product-element-list">
                             <div class="product-element">
-                                <div class="product-pic-frame"><img src="img/merche-dice-1.png"></div>
+                                <div class="product-pic-frame"><img src="{{url_for('static', filename='img/merche-dice-1.png')}}"></div>
                                 <div class="product-type"><p>Набір кубиків</p></div>
                                 <div class="product-name"><p>The Witcher Dice Set</p></div>
                                 
                                 <div class="buy-button"><p>Придбати</p></div>
                             </div>
                             <div class="product-element">
-                                <div class="product-pic-frame"><img src="img/merche-dice-2.png"></div>
+                                <div class="product-pic-frame"><img src="{{url_for('static', filename='img/merche-dice-2.png')}}"></div>
                                 <div class="product-type"><p>Набір кубиків</p></div>
                                 <div class="product-name"><p>The Witcher Dice Set</p></div>
                                 
                                 <div class="buy-button"><p>Придбати</p></div>
                             </div>
                             <div class="product-element">
-                                <div class="product-pic-frame"><img src="img/merche-dice-3.png"></div>
+                                <div class="product-pic-frame"><img src="{{url_for('static', filename='img/merche-dice-3.png')}}"></div>
                                 <div class="product-type"><p>Набір кубиків</p></div>
                                 <div class="product-name"><p>The Witcher Dice Set</p></div>
                                 
@@ -100,21 +100,21 @@
                         <div class="head-flex"><div class="product-head"><p>Продукція</p></div></div>
                         <div class="product-element-list product-element-list-right">
                             <div class="product-element product-element-reverse">
-                                <div class="product-pic-frame"><img src="img/figure_1.png"></div>
+                                <div class="product-pic-frame"><img src="{{url_for('static', filename='img/figure_1.png')}}"></div>
                                 <div class="product-type"><p>Фігурка</p></div>
                                 <div class="product-name"><p>Dragonborn knight</p></div>
                                 
                                 <div class="buy-button"><p>Придбати</p></div>
                             </div>
                             <div class="product-element product-element-reverse">
-                                <div class="product-pic-frame"><img src="img/figure_3.png"></div>
+                                <div class="product-pic-frame"><img src="{{url_for('static', filename='img/figure_2.png')}}"></div>
                                 <div class="product-type"><p>Фігурка</p></div>
                                 <div class="product-name"><p>Dragonborn knight</p></div>
                                 
                                 <div class="buy-button"><p>Придбати</p></div>
                             </div>
                             <div class="product-element product-element-reverse">
-                                <div class="product-pic-frame"><img src="img/figure_2.png"></div>
+                                <div class="product-pic-frame"><img src="{{url_for('static', filename='img/figure_3.png')}}"></div>
                                 <div class="product-type"><p>Фігурка</p></div>
                                 <div class="product-name"><p>Dragonborn knight</p></div>
                                 
@@ -135,21 +135,21 @@
                         <div class="head-flex"><div class="product-head"><p>Продукція</p></div></div>
                         <div class="product-element-list">
                             <div class="product-element">
-                                <div class="product-pic-frame-special"><img src="img/book_1.png"></div>
+                                <div class="product-pic-frame-special"><img src="{{url_for('static', filename='img/book_1.png')}}"></div>
                                 <div class="product-type"><p>Стартовій набір</p></div>
                                 <div class="product-name"><p>Essentials Kit</p></div>
                                 
                                 <div class="buy-button"><p>Придбати</p></div>
                             </div>
                             <div class="product-element">
-                                <div class="product-pic-frame-special"><img src="img/book_2.png"></div>
+                                <div class="product-pic-frame-special"><img src="{{url_for('static', filename='img/book_2.png')}}"></div>
                                 <div class="product-type"><p>Стартовій набір</p></div>
                                 <div class="product-name"><p>Essentials Kit</p></div>
                                 
                                 <div class="buy-button"><p>Придбати</p></div>
                             </div>
                             <div class="product-element">
-                                <div class="product-pic-frame-special"><img src="img/book_3.png"></div>
+                                <div class="product-pic-frame-special"><img src="{{url_for('static', filename='img/book_3.png')}}"></div>
                                 <div class="product-type"><p>Стартовій набір</p></div>
                                 <div class="product-name"><p>Essentials Kit</p></div>
                                 
@@ -172,11 +172,11 @@
 
     <footer>
         <div class="footer-top">
-            <div class="footer-logo"><a href="index.html"></a><img src="./img/logo.png"></div>
+            <div class="footer-logo"><a href="/"></a><img src="{{url_for('static', filename='img/logo.png')}}"></div>
             <div class="footer-list">
-                <a href="bestiary.html">
+                <a href="bestiary/aboleth" target="_blank">
                 <div class="footer-list-element"><p>Бестіарій</p></div></a>
-                <a href="dice-roller-master/index.html">
+                <a href="dice.html">
                 <div class="footer-list-element"><p>Дайси</p></div></a>
                 <a href="merche.html">
                 <div class="footer-list-element"><p>Мерч</p></div></a>
@@ -200,8 +200,8 @@
             </div>
         </div>
     </footer>
-    <script src="script-merche.js"></script>
-    <script src="script-scrollbar.js"></script>
+    <script src="{{url_for('static', filename='js/script-merche.js')}}"></script>
+    <script src="{{url_for('static', filename='js/script-scrollbar.js')}}"></script>
 </body>
 
 </html>

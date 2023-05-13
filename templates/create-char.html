@@ -5,13 +5,13 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/x-icon" href="./img/DnD-ico.ico">
+    <link rel="icon" type="image/x-icon" href="{{url_for('static', filename='img/DnD-ico.ico')}}">
     <title>Створення персонажу</title>
-    <link rel="stylesheet" href="../static/css/style-reset.css">
-    <link rel="stylesheet" href="../static/css/style-create-char.css">
-    <link rel="stylesheet" href="../static/css/header-footer-style.css">
-    <link rel="stylesheet" href="../static/css/style-scrollbar.css">
-    <link rel="stylesheet" href="show-move.css">
+    <link type="text/css" rel="stylesheet" href="{{url_for('static', filename='css/style-reset.css')}}">
+    <link type="text/css" rel="stylesheet" href="{{url_for('static', filename='css/style-create-char.css')}}">
+    <link type="text/css" rel="stylesheet" href="{{url_for('static', filename='css/header-footer-style.css')}}">
+    <link type="text/css" rel="stylesheet" href="{{url_for('static', filename='css/style-scrollbar.css')}}">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/show-move.css')}}">
 
 </head>
 
@@ -21,15 +21,14 @@
 
     <header>
         <div class="header-frame">
-            <div class="header-logo"><a href="/index.html"><img src="../img/logo.png"></a></div>
+            <div class="header-logo"><a href="/"><img src="../static/img/logo.png"></a></div>
             <div class="header-nav">
 
-                <a href="bestiary/aboleth" target="_blank"><p class="header-nav-element">Бестіарій</p></a>
+                <a href="/bestiary/aboleth" target="_blank"><p class="header-nav-element">Бестіарій</p></a>
 
-                <a href="..dice-roller-master/index.html" target="_blank"><p class="header-nav-element">Дайси</p></a>
+                <a href="dice.html" target="_blank"><p class="header-nav-element">Дайси</p></a>
                 
                 <a href="merche.html"><p class="header-nav-element">Мерч</p></a>
-
 
                 <!-- Цей блок якщо юзер не увійшов -->
 
@@ -39,7 +38,6 @@
                 <!-- Цей блок якщо юзер не увійшов -->
 
                 <!-- Цей блок якщо юзер вже увійшов -->
-
 
                 <div class="acc-svg-container">
                     <svg id="id_svg" width="40" height="40" viewBox="0 0 30 30" xmlns="http://www.w3.org/2000/svg"
@@ -61,21 +59,14 @@
                                 
                                 <div class="user_info_window_button"><a class="a_text" href="charlist.html">Мої персонажі</a></div>
                                 
-                                <div class="user_info_window_button"><a class="a_text" href="index.html">Вихід</a></div>
+                                <div class="user_info_window_button"><a class="a_text" href="/">Вихід</a></div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <!-- Цей блок якщо юзер вже увійшов -->
             </div>
         </div>
     </header>
-
-
-
-
-
-
 
 
 
@@ -210,34 +201,34 @@
                 <div class="create-char-stats-container">
                     <div class="create-char-stats-element">
                         <div class="create-char-stats-text">Сила</div>
-                        <img src="img/strength.png">
+                        <img src="{{url_for('static', filename='img/strength.png')}}">
                         <input type="number" min="1" max="20" class="input-level center-input" value="1" onkeydown="return (event.key >= '0' && event.key <= '') || event.key === '.' || event.key === ',' || event.key === 'Backspace' || event.key === 'Delete' || event.key === 'ArrowLeft' || event.key === 'ArrowRight' || event.key === 'Tab'">
                     </div>
                     <div class="create-char-stats-element">
                         <div class="create-char-stats-text">Спритність</div>
-                        <img src="img/dexterity.png">
+                        <img src="{{url_for('static', filename='img/dexterity.png')}}">
                         <input type="number" min="1" max="20" class="input-level center-input" value="1" onkeydown="return (event.key >= '0' && event.key <= '') || event.key === '.' || event.key === ',' || event.key === 'Backspace' || event.key === 'Delete' || event.key === 'ArrowLeft' || event.key === 'ArrowRight' || event.key === 'Tab'">
                     </div>
                     <div class="create-char-stats-element">
                         <div class="create-char-stats-text">Статура</div>
-                        <img src="img/constitution.png">
+                        <img src="{{url_for('static', filename='img/constitution.png')}}">
                         <input type="number" min="1" max="20" class="input-level center-input" value="1" onkeydown="return (event.key >= '0' && event.key <= '') || event.key === '.' || event.key === ',' || event.key === 'Backspace' || event.key === 'Delete' || event.key === 'ArrowLeft' || event.key === 'ArrowRight' || event.key === 'Tab'">
                     </div>
                 </div>
                 <div class="create-char-stats-container">
                     <div class="create-char-stats-element">
                         <div class="create-char-stats-text">Інтелект</div>
-                        <img src="img/intelect.png">
+                        <img src="{{url_for('static', filename='img/intelect.png')}}">
                         <input type="number" min="1" max="20" class="input-level center-input" value="1" onkeydown="return (event.key >= '0' && event.key <= '') || event.key === '.' || event.key === ',' || event.key === 'Backspace' || event.key === 'Delete' || event.key === 'ArrowLeft' || event.key === 'ArrowRight' || event.key === 'Tab'">
                     </div>
                     <div class="create-char-stats-element">
                         <div class="create-char-stats-text">Мудрість</div>
-                        <img src="img/wisdom.png">
+                        <img src="{{url_for('static', filename='img/wisdom.png')}}">
                         <input type="number" min="1" max="20" class="input-level center-input" value="1" onkeydown="return (event.key >= '0' && event.key <= '') || event.key === '.' || event.key === ',' || event.key === 'Backspace' || event.key === 'Delete' || event.key === 'ArrowLeft' || event.key === 'ArrowRight' || event.key === 'Tab'">
                     </div>
                     <div class="create-char-stats-element">
                         <div class="create-char-stats-text">Харизма</div>
-                        <img src="img/charisma.png">
+                        <img src="{{url_for('static', filename='img/charisma.png')}}">
                         <input type="number" min="1" max="20" class="input-level center-input" value="1" onkeydown="return (event.key >= '0' && event.key <= '') || event.key === '.' || event.key === ',' || event.key === 'Backspace' || event.key === 'Delete' || event.key === 'ArrowLeft' || event.key === 'ArrowRight' || event.key === 'Tab'">
                     </div>
                 </div>
@@ -360,11 +351,11 @@
 
     <footer>
         <div class="footer-top">
-            <div class="footer-logo"><a href="index.html"></a><img src="./img/logo.png"></div>
+            <div class="footer-logo"><img src="../static/img/logo.png"></div>
             <div class="footer-list">
-                <a href="bestiary.html">
+                <a href="bestiary/aboleth" target="_blank">
                 <div class="footer-list-element"><p>Бестіарій</p></div></a>
-                <a href="dice-roller-master/index.html">
+                <a href="dice.html" target="_blank">
                 <div class="footer-list-element"><p>Дайси</p></div></a>
                 <a href="merche.html">
                 <div class="footer-list-element"><p>Мерч</p></div></a>
@@ -388,12 +379,15 @@
             </div>
         </div>
     </footer>
-    <script src="script-char-create.js"></script>
 
-    <script src="script-scrollbar.js"></script>
-    <script src="script-header.js"></script>
-    <script src="script-create-char-random.js"></script>
-    <script src="script-create-char.js"></script>
+    <script src="{{url_for('static', filename='js/script-char-create.js')}}"></script>
+    <script src="{{url_for('static', filename='js/script-header.js')}}"></script>
+    <script src="{{url_for('static', filename='js/script-scrollbar.js')}}"></script>
+    <script src="{{url_for('static', filename='js/script-create-char-random.js')}}"></script>
+    <script src="{{url_for('static', filename='js/script-create-char.js')}}"></script>
+
+    <script src=""></script>
+    <script src=""></script>
 </body>
 
 </html>

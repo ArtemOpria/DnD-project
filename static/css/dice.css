@@ -9,12 +9,12 @@
 .center_field * {
     position: relative;
     font-family: Trebuchet MS;
-    background-color: rgba(255, 255, 255, 0.6);
+    background-color: rgba(0, 0, 0, 0.6);
     padding: 5px 15px;
 }
 
 .center_field br {
-    background-color: rgba(0, 0, 0, 0);
+    background-color: rgba(255, 255, 255, 0);
 }
 
 .bottom_field {
@@ -29,39 +29,43 @@
     font-size: 32pt;
     word-spacing: 0.5em;
     padding: 5px 15px;
-    color: rgba(21, 26, 26, 0.6);
+    color: rgba(192, 192, 192, 0.774);
     top: 45%;
+    border-radius: 30px;
 }
 
 #labelhelp {
-    font-size: 12pt;
+    font-size: 13pt;
     padding: 5px 15px;
-    color: rgba(21, 26, 26, 0.5);
+    color: #ffffff;
     bottom: 100px;
+    border-radius: 15px;
 }
 
 #set {
     text-align: center;
     font-size: 26pt;
     border: none;
-    color: rgba(0, 0, 0, 0.8);
+    color: #ffffff;
     background-color: rgba(255, 255, 255, 0);
     top: 60%;
 }
 
 #sethelp {
-    font-size: 12pt;
-    color: rgba(21, 26, 26, 0.5);
+    font-size: 14pt;
+    color: #ffffff;
     background: none;
     top: 25%;
 }
 
 #selector_div button {
     font-size: 20pt;
-    color: rgb(255, 255, 255);
-    background-color: rgba(0, 0, 0, 0.6);
+    color: rgba(255, 255, 255, 0.945);
+    background-color: rgba(0, 0, 0, 0.534);
     cursor: pointer;
-    border: none;
+    border: 1px solid;
+    border-color: rgba(0, 0, 0, 0.37);
+    border-radius: 10px;
     width: 5em;
     top: 62%;
 }
@@ -70,3 +74,11 @@
     position: absolute;
     border: solid black 1px;
 }
+
+body{
+    background-color: black;
+}
+
+header {
+    background-color: transparent;
+  }
