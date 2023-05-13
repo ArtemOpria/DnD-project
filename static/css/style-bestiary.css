@@ -52,6 +52,10 @@ main {
   margin-top: 15px;
 }
 
+.bestiary-element a{
+  text-decoration: none;
+    color: white;
+}
 .bestiary-search {
   display: flex;
   padding: 0px 19px;
@@ -117,6 +121,7 @@ main {
   height: 384px;
   border: 1px solid #FFFFFF;
   border-radius: 20px;
+  overflow: hidden;
 }
 
 .bestiary-display-flex-container img {

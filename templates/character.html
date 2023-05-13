@@ -4,13 +4,13 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/x-icon" href="./img/DnD-ico.ico">
+    <link rel="icon" type="image/x-icon" href="{{url_for('static', filename='img/DnD-ico.ico')}}">
     <title>Персонаж</title>
-    <link rel="stylesheet" href="style-reset.css">
-    <link rel="stylesheet" href="style-character.css">
-    <link rel="stylesheet" href="header-footer-style.css">
-    <link rel="stylesheet" href="style-scrollbar.css">
-    <link rel="stylesheet" href="show-move.css">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/style-reset.css')}}">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/header-footer-style.css')}}">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/style-scrollbar.css')}}">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/style-character.css')}}">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/show-move.css')}}">
 
 </head>
 <body>
@@ -19,12 +19,12 @@
     
     <header>
         <div class="header-frame">
-            <div class="header-logo"><a href="index.html"><img src="./img/logo.png"></a></div>
+            <div class="header-logo"><a href="/"><img src="../static/img/logo.png"></a></div>
             <div class="header-nav">
 
-                <a href="bestiary/aboleth" target="_blank"><p class="header-nav-element">Бестіарій</p></a>
+                <a href="/bestiary/aboleth" target="_blank"><p class="header-nav-element">Бестіарій</p></a>
 
-                <a href="dice-roller-master/index.html" target="_blank"><p class="header-nav-element">Дайси</p></a>
+                <a href="dice.html" target="_blank"><p class="header-nav-element">Дайси</p></a>
                 
                 <a href="merche.html"><p class="header-nav-element">Мерч</p></a>
 
@@ -48,7 +48,7 @@
                                 
                                 <div class="user_info_window_button"><a class="a_text" href="charlist.html">Мої персонажі</a></div>
                                 
-                                <div class="user_info_window_button"><a class="a_text" href="index.html">Вихід</a></div>
+                                <div class="user_info_window_button"><a class="a_text" href="/">Вихід</a></div>
                             </div>
                         </div>
                     </div>
@@ -56,14 +56,13 @@
             </div>
         </div>
     </header>
-
     <main>
         <div class="wrapper">
 
             <div class="character-caption">
                 <div class="character-caption-flex">
                     <div class="character-caption-element-double">
-                        <div class="character-caption-element"><img src="img/character-logo.png"></div>
+                        <div class="character-caption-element"><img src="{{url_for('static', filename='/img/character-logo.png')}}"></div>
                         <div class="character-caption-element"><input class="name-input" type="text" placeholder="Ім'я персонажа"></div>
                     </div>
                     <div class="character-caption-element-double">
@@ -92,22 +91,22 @@
             <div class="character-params">
                 <div class="character-params-element">
                     <p>Клас броні:</p>
-                    <img src="img/armor-class.png">
+                    <img src="{{url_for('static', filename='img/armor-class.png')}}">
                     <input type="number" min="1" max="100" class="input-level" value="10" onkeydown="return (event.key >= '0' && event.key <= '') || event.key === '.' || event.key === ',' || event.key === 'Backspace' || event.key === 'Delete' || event.key === 'ArrowLeft' || event.key === 'ArrowRight' || event.key === 'Tab'">
                 </div>
                 <div class="character-params-element">
                     <p>Швидкість:</p>
-                    <img src="img/speed-icon.png">
+                    <img src="{{url_for('static', filename='img/speed-icon.png')}}">
                     <input type="number" min="1" max="100" class="input-level" value="30" onkeydown="return (event.key >= '0' && event.key <= '') || event.key === '.' || event.key === ',' || event.key === 'Backspace' || event.key === 'Delete' || event.key === 'ArrowLeft' || event.key === 'ArrowRight' || event.key === 'Tab'">
                 </div>
                 <div class="character-params-element">
                     <p>Інтіціатива:</p>
-                    <img src="img/initiative.png">
+                    <img src="{{url_for('static', filename='/img/initiative.png')}}">
                     <input type="number" min="0" max="100" class="input-level" value="1" onkeydown="return (event.key >= '0' && event.key <= '') || event.key === '.' || event.key === ',' || event.key === 'Backspace' || event.key === 'Delete' || event.key === 'ArrowLeft' || event.key === 'ArrowRight' || event.key === 'Tab'">
                 </div>
                 <div class="character-params-element">
-                    <p>Здоров`я:</p>
-                    <img src="img/health.png">
+                    <p>Здоров'я:</p>
+                    <img src="{{url_for('static', filename='/img/health.png')}}">
                     <div class="health-flex">
                         <input type="number" min="0" max="1000" class="input-level" value="0" onkeydown="return (event.key >= '0' && event.key <= '') || event.key === '.' || event.key === ',' || event.key === 'Backspace' || event.key === 'Delete' || event.key === 'ArrowLeft' || event.key === 'ArrowRight' || event.key === 'Tab'">
                         <p>/</p>
@@ -119,14 +118,14 @@
 
             <div class="character-bonus">
                 <div class="character-bonus-element">
-                    <img src="img/mastery.png">
+                    <img src="{{url_for('static', filename='/img/mastery.png')}}">
                     <div class="character-bonus-element-info">
                         <div class="character-bonus-text"><p>Бонус майстерності:</p></div>
                         <input type="number" min="0" max="100" class="input-level" value="0" onkeydown="return (event.key >= '0' && event.key <= '') || event.key === '.' || event.key === ',' || event.key === 'Backspace' || event.key === 'Delete' || event.key === 'ArrowLeft' || event.key === 'ArrowRight' || event.key === 'Tab'">
                     </div>
                 </div>
                 <div class="character-bonus-element">
-                    <img src="img/inspiration.png">
+                    <img src="{{url_for('static', filename='/img/inspiration.png')}}">
                     <div class="character-bonus-element-info">
                         <div class="character-bonus-text"><p>Натхнення:</p></div>
                         <input type="number" min="0" max="100" class="input-level" value="0" onkeydown="return (event.key >= '0' && event.key <= '') || event.key === '.' || event.key === ',' || event.key === 'Backspace' || event.key === 'Delete' || event.key === 'ArrowLeft' || event.key === 'ArrowRight' || event.key === 'Tab'">
@@ -139,7 +138,7 @@
                     <div class="character-stats-element border-1">
                         <div class="character-stats-element-stat">
                             <div class="character-stats-element-stat-text"><p>Сила</p></div>
-                            <img src="img/strength.png">
+                            <img src="{{url_for('static', filename='/img/strength.png')}}">
                             <input type="number" min="1" max="20" class="input-level" value="1" onkeydown="return (event.key >= '0' && event.key <= '') || event.key === '.' || event.key === ',' || event.key === 'Backspace' || event.key === 'Delete' || event.key === 'ArrowLeft' || event.key === 'ArrowRight' || event.key === 'Tab'">
                         </div>
                         <div class="character-stats-prof-list">
@@ -158,7 +157,7 @@
                     <div class="character-stats-element border-2">
                         <div class="character-stats-element-stat">
                             <div class="character-stats-element-stat-text"><p>Інтелект</p></div>
-                            <img src="img/intelect.png">
+                            <img src="{{url_for('static', filename='/img/intelect.png')}}">
                             <input type="number" min="1" max="20" class="input-level" value="1" onkeydown="return (event.key >= '0' && event.key <= '') || event.key === '.' || event.key === ',' || event.key === 'Backspace' || event.key === 'Delete' || event.key === 'ArrowLeft' || event.key === 'ArrowRight' || event.key === 'Tab'">
                         </div>
                         <div class="character-stats-prof-list">
@@ -199,7 +198,7 @@
                     <div class="character-stats-element border-3">
                         <div class="character-stats-element-stat">
                             <div class="character-stats-element-stat-text"><p>Спритність</p></div>
-                            <img src="img/dexterity.png">
+                            <img src="{{url_for('static', filename='/img/dexterity.png')}}">
                             <input type="number" min="1" max="20" class="input-level" value="1" onkeydown="return (event.key >= '0' && event.key <= '') || event.key === '.' || event.key === ',' || event.key === 'Backspace' || event.key === 'Delete' || event.key === 'ArrowLeft' || event.key === 'ArrowRight' || event.key === 'Tab'">
                         </div>
                         <div class="character-stats-prof-list">
@@ -228,7 +227,7 @@
                     <div class="character-stats-element border-4">
                         <div class="character-stats-element-stat">
                             <div class="character-stats-element-stat-text"><p>Мудрість</p></div>
-                            <img src="img/wisdom.png">
+                            <img src="{{url_for('static', filename='/img/wisdom.png')}}">
                             <input type="number" min="1" max="20" class="input-level" value="1" onkeydown="return (event.key >= '0' && event.key <= '') || event.key === '.' || event.key === ',' || event.key === 'Backspace' || event.key === 'Delete' || event.key === 'ArrowLeft' || event.key === 'ArrowRight' || event.key === 'Tab'">
                         </div>
                         <div class="character-stats-prof-list">
@@ -269,7 +268,7 @@
                     <div class="character-stats-element border-5">
                         <div class="character-stats-element-stat">
                             <div class="character-stats-element-stat-text"><p>Статура</p></div>
-                            <img src="img/constitution.png">
+                            <img src="{{url_for('static', filename='/img/constitution.png')}}">
                             <input type="number" min="1" max="20" class="input-level" value="1" onkeydown="return (event.key >= '0' && event.key <= '') || event.key === '.' || event.key === ',' || event.key === 'Backspace' || event.key === 'Delete' || event.key === 'ArrowLeft' || event.key === 'ArrowRight' || event.key === 'Tab'">
                         </div>
                         <div class="character-stats-prof-list">
@@ -283,7 +282,7 @@
                     <div class="character-stats-element border-6">
                         <div class="character-stats-element-stat">
                             <div class="character-stats-element-stat-text"><p>Харизма</p></div>
-                            <img src="img/charisma.png">
+                            <img src="{{url_for('static', filename='/img/charisma.png')}}">
                             <input type="number" min="1" max="20" class="input-level" value="1" onkeydown="return (event.key >= '0' && event.key <= '') || event.key === '.' || event.key === ',' || event.key === 'Backspace' || event.key === 'Delete' || event.key === 'ArrowLeft' || event.key === 'ArrowRight' || event.key === 'Tab'">
                         </div>
                         <div class="character-stats-prof-list">
@@ -356,11 +355,11 @@
 
     <footer>
         <div class="footer-top">
-            <div class="footer-logo"><a href="index.html"></a><img src="./img/logo.png"></div>
+            <div class="footer-logo"><img src="../static/img/logo.png"></div>
             <div class="footer-list">
-                <a href="bestiary.html">
+                <a href="bestiary/aboleth" target="_blank">
                 <div class="footer-list-element"><p>Бестіарій</p></div></a>
-                <a href="dice-roller-master/index.html">
+                <a href="dice.html" target="_blank">
                 <div class="footer-list-element"><p>Дайси</p></div></a>
                 <a href="merche.html">
                 <div class="footer-list-element"><p>Мерч</p></div></a>
@@ -384,7 +383,7 @@
             </div>
         </div>
     </footer>
-<script src="script-scrollbar.js"></script>
-<script src="script-header.js"></script>
+<script src="{{url_for('static', filename='js/script-scrollbar.js')}}"></script>
+<script src="{{url_for('static', filename='js/script-header.js')}}"></script>
 </body>
 </html>

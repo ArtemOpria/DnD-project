@@ -2,7 +2,7 @@ main {
     position: relative;
     width: 100%;
     min-height: 2706px;
-    background: url("img/background-character.png");
+    background: url("/static/img/background-character.png");
     background-attachment: fixed;
     background-repeat: no-repeat;
     background-size: cover;

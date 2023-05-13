@@ -14,7 +14,6 @@ def all_monsters():
     return monsters 
 
 monsters1 = all_monsters()
-print(monsters1)
 
 
 @app.route("/bestiary/<monsters_name>")
@@ -26,7 +25,6 @@ def detail_bestiary(monsters_name):
             for_api_key = value[1]
             f = open(f"./static/json/all_types_details/monsters/{for_api_key}.json")
             data = json.load(f)
-            print(data)
             monster_properties = {}
             try:
                 monster_properties["name"] = data["name"]
@@ -122,13 +120,37 @@ def detail_bestiary(monsters_name):
                 monster_properties["image"] = "" 
     return render_template("bestiary.html", dict_monster_prop = monster_properties, monsters = monsters1)
 
-@app.route("/index.html")
+@app.route("/")
 def index():
     return render_template("index.html")
 
 @app.route("/merche.html")
 def merche():
     return render_template("merche.html")
+
+@app.route("/auth.html")
+def auth():
+    return render_template("auth.html")
+
+@app.route("/registration.html")
+def registration():
+    return render_template("registration.html")
+
+@app.route("/charlist.html")
+def charlist():
+    return render_template("charlist.html")
+
+@app.route("/create-char.html")
+def create_char():
+    return render_template("create-char.html")
+
+@app.route("/dice.html")
+def dice():
+    return render_template("dice.html")
+
+@app.route("/character.html")
+def character():
+    return render_template("character.html")
 
 if __name__ == "__main__":
     print('start server')
