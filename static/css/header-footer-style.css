@@ -79,6 +79,8 @@ header {
     left: -150px;
     top: 100px;
 
+    text-align: center;
+
     width: 300px;
     height: 204px;
 
@@ -100,8 +102,6 @@ header {
 .user_info_window_text{
     position: relative;
     height: 46px;
-    left: 30%;
-    right: 20.8%;
     
     top: 50%;
     /* top: calc(50% - 46px/2 - 60px); */

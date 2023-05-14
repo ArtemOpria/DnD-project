@@ -46,7 +46,7 @@
                     <div class="user_info_window user_info_display user_info_transition">
                         <div style="margin-top: 7%;">
                             <div class="user_info_window_text">Dungeon Master</div>
-                            <div class="user_info_window_text">Максим Міхонек</div>
+                            <div class="user_info_window_text">{{name}}</div>
                             <div style="display: flex;">
                                 
                                 <div class="user_info_window_button"><a class="a_text" href="charlist.html">Мої персонажі</a></div>
@@ -63,53 +63,45 @@
     <main>
         <div class="charlist-container">
             <div class="charlist-itself">
-                <a href="character.html">
-                    <div class="charlist-element">
-                        <div class="badge-container"><img src="{{url_for('static', filename='/img/ico-pala.png')}}"></div>
-                        <div class="name-container">
-                            <div class="name-top charlist-text charlist-text-interval">
-                                <p>Ім'я</p>
-                            </div>
-                            <div class="name-bot charlist-text">
-                                <p>Авалах Синлує</p>
-                            </div>
-                        </div>
-                        <div class="class-container">
-                            <div class="class-top charlist-text charlist-text-interval">
-                                <p>Клас:</p>
-                            </div>
-                            <div class="class-bot charlist-text">
-                                <p>Воїн</p>
-                            </div>
-                        </div>
-                        <div class="race-container">
-                            <div class="race-top charlist-text charlist-text-interval">
-                                <p>Раса:</p>
-                            </div>
-                            <div class="race-bot charlist-text">
-                                <p>Ельф</p>
-                            </div>
-                        </div>
-                        <div class="level-container">
-                            <div class="level-top charlist-text charlist-text-interval">
-                                <p>Рівень:</p>
-                            </div>
-                            <div class="level-bot charlist-text">
-                                <p>1</p>
-                            </div>
-                        </div>
-                    </div>
-                </a>
 
-                <a href="character.html">
+
+                {%for character_l in character_dict.items()%}
+                <a href="character/{{character_l[0]}}">
                     <div class="charlist-element">
-                        <div class="badge-container"><img src="{{url_for('static', filename='/img/ico-bard.png')}}"></div>
+                        <div class="badge-container">
+                            {% if character_l[1][1] == "Варвар" %}
+                            <img src="{{url_for('static', filename='/img/ico-barbar.png')}}">
+                            {% elif character_l[1][1] == "Бард" %}
+                            <img src="{{url_for('static', filename='/img/ico-bard.png')}}">
+                            {% elif character_l[1][1] == "Друїд" %}
+                            <img src="{{url_for('static', filename='/img/ico-druid.png')}}">
+                            {% elif character_l[1][1] == "Рейнджер" %}
+                            <img src="{{url_for('static', filename='/img/ico-hunt.png')}}">
+                            {% elif character_l[1][1] == "Чаклун" %}
+                            <img src="{{url_for('static', filename='/img/ico-mage.png')}}">
+                            {% elif character_l[1][1] == "Монах" %}
+                            <img src="{{url_for('static', filename='/img/ico-monk.png')}}">
+                            {% elif character_l[1][1] == "Паладін" %}
+                            <img src="{{url_for('static', filename='/img/ico-pala.png')}}">
+                            {% elif character_l[1][1] == "Розбійник" %}
+                            <img src="{{url_for('static', filename='/img/ico-plut.png')}}">
+                            {% elif character_l[1][1] == "Клірик" %}
+                            <img src="{{url_for('static', filename='/img/ico-priest.png')}}">
+                            {% elif character_l[1][1] == "Заклинатель" %}
+                            <img src="{{url_for('static', filename='/img/ico-sorc.png')}}">
+                            {% elif character_l[1][1] == "Воїн" %}
+                            <img src="{{url_for('static', filename='/img/ico-war.png')}}">
+                            {% elif character_l[1][1] == "Чорнокнижник" %}
+                            <img src="{{url_for('static', filename='/img/ico-warlock.png')}}">
+                            
+                            {% endif %}
+                        </div>
                         <div class="name-container">
                             <div class="name-top charlist-text charlist-text-interval">
                                 <p>Ім'я</p>
                             </div>
                             <div class="name-bot charlist-text">
-                                <p>Авалах Синлує</p>
+                                <p>{{character_l[1][0]}}</p>
                             </div>
                         </div>
                         <div class="class-container">
@@ -117,7 +109,7 @@
                                 <p>Клас:</p>
                             </div>
                             <div class="class-bot charlist-text">
-                                <p>Воїн</p>
+                                <p>{{character_l[1][1]}}</p>
                             </div>
                         </div>
                         <div class="race-container">
@@ -125,7 +117,7 @@
                                 <p>Раса:</p>
                             </div>
                             <div class="race-bot charlist-text">
-                                <p>Ельф</p>
+                                <p>{{character_l[1][2]}}</p>
                             </div>
                         </div>
                         <div class="level-container">
@@ -133,11 +125,12 @@
                                 <p>Рівень:</p>
                             </div>
                             <div class="level-bot charlist-text">
-                                <p>1</p>
+                                <p>{{character_l[1][3]}}</p>
                             </div>
                         </div>
                     </div>
                 </a>
+                {%endfor%}
 
                 <a href="create-char.html"><div class="charlist-element charlist-new charlist-text">
                     <p>Створити нового персонажа</p>

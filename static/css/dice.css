@@ -29,7 +29,7 @@
     font-size: 32pt;
     word-spacing: 0.5em;
     padding: 5px 15px;
-    color: rgba(192, 192, 192, 0.774);
+    color: #ffffff;
     top: 45%;
     border-radius: 30px;
 }
@@ -47,14 +47,18 @@
     font-size: 26pt;
     border: none;
     color: #ffffff;
-    background-color: rgba(255, 255, 255, 0);
+    background:linear-gradient(0deg, rgba(0, 0, 0, 0.37));
+    border-radius: 45px;
     top: 60%;
 }
 
 #sethelp {
     font-size: 14pt;
     color: #ffffff;
-    background: none;
+    margin-left: 20%;
+    margin-right: 20%;
+    background:linear-gradient(0deg, rgba(0, 0, 0, 0.37));
+    border-radius: 45px;
     top: 25%;
 }
 
@@ -80,5 +84,5 @@ body{
 }
 
 header {
-    background-color: transparent;
-  }
+    background-color: rgba(0,0,0,0.534);
+}

@@ -146,9 +146,7 @@
         return Math.pow(2, Math.floor(Math.log(approx) / Math.log(2)));
     }
 
-//наша функция последним параметром принимает цвет кубика в хексе 
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-    this.create_dice_color_materials = function(face_labels, size, margin, dice_colorTry) {
+    this.create_dice_materials = function(face_labels, size, margin) {
         function create_text_texture(text, color, back_color) {
             if (text == undefined) return null;
             var canvas = document.createElement("canvas");
@@ -172,11 +170,9 @@
         var materials = [];
         for (var i = 0; i < face_labels.length; ++i)
             materials.push(new THREE.MeshPhongMaterial($t.copyto(this.material_options,
-                        { map: create_text_texture(face_labels[i], this.label_color, dice_colorTry) })));
+                        { map: create_text_texture(face_labels[i], this.label_color, this.dice_color) })));
         return materials;
     }
-
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
     var d4_labels = [
         [[], [0, 0, 0], [2, 4, 3], [1, 3, 4], [2, 1, 4], [1, 2, 3]],
@@ -184,6 +180,36 @@
         [[], [0, 0, 0], [4, 3, 2], [3, 4, 1], [4, 2, 1], [3, 1, 2]],
         [[], [0, 0, 0], [4, 2, 3], [1, 4, 3], [4, 1, 2], [1, 3, 2]]
     ];
+
+    this.create_d4_materials = function(size, margin, labels) {
+        function create_d4_text(text, color, back_color) {
+            var canvas = document.createElement("canvas");
+            var context = canvas.getContext("2d");
+            var ts = calc_texture_size(size + margin) * 2;
+            canvas.width = canvas.height = ts;
+            context.font = (ts - margin) / 1.5 + "pt Arial";
+            context.fillStyle = back_color;
+            context.fillRect(0, 0, canvas.width, canvas.height);
+            context.textAlign = "center";
+            context.textBaseline = "middle";
+            context.fillStyle = color;
+            for (var i in text) {
+                context.fillText(text[i], canvas.width / 2,
+                        canvas.height / 2 - ts * 0.3);
+                context.translate(canvas.width / 2, canvas.height / 2);
+                context.rotate(Math.PI * 2 / 3);
+                context.translate(-canvas.width / 2, -canvas.height / 2);
+            }
+            var texture = new THREE.Texture(canvas);
+            texture.needsUpdate = true;
+            return texture;
+        }
+        var materials = [];
+        for (var i = 0; i < labels.length; ++i)
+            materials.push(new THREE.MeshPhongMaterial($t.copyto(this.material_options,
+                        { map: create_d4_text(labels[i], this.label_color, this.dice_color) })));
+        return materials;
+    }
 
     this.create_d4_geometry = function(radius) {
         var vertices = [[1, 1, 1], [-1, -1, 1], [-1, 1, -1], [1, -1, -1]];
@@ -246,20 +272,16 @@
     this.material_options = {
         specular: 0x172022,
         color: 0xf0f0f0,
-        shininess: 40,
+        shininess: 10,
         shading: THREE.FlatShading,
     };
-    // Цвет текста 
-    this.label_color = '#ffffff';
-    // Цвет дайсов
-    this.dice_color = '#9000ff';
-    this.dice_color1 = '#0f1ee0';
-    this.dice_color2 = '#fffff0';
-    this.ambient_light_color = 0x6550a3;
-    this.spot_light_color = 0xdb8e4f;
-    
-    //Цвет бека
-    this.selector_back_colors = { color: 0xffffff, shininess: 10, emissive: 0xffffff};
+    this.label_color = '#ff0000';
+    this.dice_color = '#202020';
+    this.ambient_light_color = 0xf0f5fb;
+    this.spot_light_color = 0xefdfd5;
+    this.selector_back_colors = { color: 0x404040, shininess: 0, emissive: 0x858787 };
+    this.desk_color = 0xdfdfdf;
+    this.use_shadows = true;
 
     this.known_types = ['d4', 'd6', 'd8', 'd10', 'd12', 'd20', 'd100'];
     this.dice_face_range = { 'd4': [1, 4], 'd6': [1, 6], 'd8': [1, 8], 'd10': [0, 9], 
@@ -272,49 +294,49 @@
     this.create_d4 = function() {
         if (!this.d4_geometry) this.d4_geometry = this.create_d4_geometry(this.scale * 1.2);
         if (!this.d4_material) this.d4_material = new THREE.MeshFaceMaterial(
-                this.create_dice_color_materials(this.standart_d20_dice_face_labels, this.scale / 2, 1.0, this.dice_color));
+                this.create_d4_materials(this.scale / 2, this.scale * 2, d4_labels[0]));
         return new THREE.Mesh(this.d4_geometry, this.d4_material);
     }
 
     this.create_d6 = function() {
         if (!this.d6_geometry) this.d6_geometry = this.create_d6_geometry(this.scale * 0.9);
-        if (!this.d6_material) this.d6_material = new THREE.MeshFaceMaterial(
-                this.create_dice_color_materials(this.standart_d20_dice_face_labels, this.scale / 2, 1.0, this.dice_color1));
-        return new THREE.Mesh(this.d6_geometry, this.d6_material);
+        if (!this.dice_material) this.dice_material = new THREE.MeshFaceMaterial(
+                this.create_dice_materials(this.standart_d20_dice_face_labels, this.scale / 2, 1.0));
+        return new THREE.Mesh(this.d6_geometry, this.dice_material);
     }
 
     this.create_d8 = function() {
         if (!this.d8_geometry) this.d8_geometry = this.create_d8_geometry(this.scale);
-        if (!this.d8_material) this.d8_material = new THREE.MeshFaceMaterial(
-                this.create_dice_color_materials(this.standart_d20_dice_face_labels, this.scale / 2, 1.2, this.dice_color2));
-        return new THREE.Mesh(this.d8_geometry, this.d8_material);
+        if (!this.dice_material) this.dice_material = new THREE.MeshFaceMaterial(
+                this.create_dice_materials(this.standart_d20_dice_face_labels, this.scale / 2, 1.2));
+        return new THREE.Mesh(this.d8_geometry, this.dice_material);
     }
 
     this.create_d10 = function() {
         if (!this.d10_geometry) this.d10_geometry = this.create_d10_geometry(this.scale * 0.9);
-        if (!this.d10_material) this.d10_material = new THREE.MeshFaceMaterial(
-                this.create_dice_color_materials(this.standart_d20_dice_face_labels, this.scale / 2, 1.0, this.dice_color));
-        return new THREE.Mesh(this.d10_geometry, this.d10_material);
+        if (!this.dice_material) this.dice_material = new THREE.MeshFaceMaterial(
+                this.create_dice_materials(this.standart_d20_dice_face_labels, this.scale / 2, 1.0));
+        return new THREE.Mesh(this.d10_geometry, this.dice_material);
     }
 
     this.create_d12 = function() {
         if (!this.d12_geometry) this.d12_geometry = this.create_d12_geometry(this.scale * 0.9);
-        if (!this.d12_material) this.d12_material = new THREE.MeshFaceMaterial(
-                this.create_dice_color_materials(this.standart_d20_dice_face_labels, this.scale / 2, 1.0, this.dice_color));
-        return new THREE.Mesh(this.d12_geometry, this.d12_material);
+        if (!this.dice_material) this.dice_material = new THREE.MeshFaceMaterial(
+                this.create_dice_materials(this.standart_d20_dice_face_labels, this.scale / 2, 1.0));
+        return new THREE.Mesh(this.d12_geometry, this.dice_material);
     }
 
     this.create_d20 = function() {
         if (!this.d20_geometry) this.d20_geometry = this.create_d20_geometry(this.scale);
-        if (!this.d20_material) this.d20_material = new THREE.MeshFaceMaterial(
-                this.create_dice_color_materials(this.standart_d20_dice_face_labels, this.scale / 2, 1.0, this.dice_color));
-        return new THREE.Mesh(this.d20_geometry, this.d20_material);
+        if (!this.dice_material) this.dice_material = new THREE.MeshFaceMaterial(
+                this.create_dice_materials(this.standart_d20_dice_face_labels, this.scale / 2, 1.0));
+        return new THREE.Mesh(this.d20_geometry, this.dice_material);
     }
 
     this.create_d100 = function() {
         if (!this.d10_geometry) this.d10_geometry = this.create_d10_geometry(this.scale * 0.9);
         if (!this.d100_material) this.d100_material = new THREE.MeshFaceMaterial(
-                this.create_dice_color_materials(this.standart_d100_dice_face_labels, this.scale / 2, 1.5, this.dice_color));
+                this.create_dice_materials(this.standart_d100_dice_face_labels, this.scale / 2, 1.5));
         return new THREE.Mesh(this.d10_geometry, this.d100_material);
     }
 
@@ -435,25 +457,21 @@
         }
         this.aspect = Math.min(this.cw / this.w, this.ch / this.h);
         that.scale = Math.sqrt(this.w * this.w + this.h * this.h) / 13;
-    
+
         this.renderer.setSize(this.cw * 2, this.ch * 2);
-    
+
         this.wh = this.ch / this.aspect / Math.tan(10 * Math.PI / 180);
         if (this.camera) this.scene.remove(this.camera);
         this.camera = new THREE.PerspectiveCamera(20, this.cw / this.ch, 1, this.wh * 1.3);
         this.camera.position.z = this.wh;
-    
+
         var mw = Math.max(this.w, this.h);
         if (this.light) this.scene.remove(this.light);
-    
         this.light = new THREE.SpotLight(that.spot_light_color, 2.0);
         this.light.position.set(-mw / 2, mw / 2, mw * 2);
-        this.light.decay = 0; 
-        this.light.position.set(mw,-mw,mw*2);
         this.light.target.position.set(0, 0, 0);
-        this.light.distance = mw * 10;
+        this.light.distance = mw * 5;
         this.light.castShadow = true;
-        this.light.angle = Math.PI / 2;
         this.light.shadowCameraNear = mw / 10;
         this.light.shadowCameraFar = mw * 5;
         this.light.shadowCameraFov = 50;
@@ -462,15 +480,13 @@
         this.light.shadowMapWidth = 1024;
         this.light.shadowMapHeight = 1024;
         this.scene.add(this.light);
-    
+
         if (this.desk) this.scene.remove(this.desk);
-        var textureLoader = new THREE.TextureLoader();
-        var texture = textureLoader.load('../../static/img/background-dice.jpg');
-        var material = new THREE.MeshBasicMaterial({ map: texture });
-        this.desk = new THREE.Mesh(new THREE.PlaneGeometry(this.cw * 2, this.ch * 2, 1, 1), material);
-        this.desk.receiveShadow = true;
+        this.desk = new THREE.Mesh(new THREE.PlaneGeometry(this.w * 2, this.h * 2, 1, 1), 
+                new THREE.MeshPhongMaterial({ color: that.desk_color }));
+        this.desk.receiveShadow = that.use_shadows;
         this.scene.add(this.desk);
-    
+
         this.renderer.render(this.scene, this.camera);
     }
 
@@ -667,7 +683,7 @@
         if (dice.dice_type == 'd4' && num != 0) {
             if (num < 0) num += 4;
             dice.material = new THREE.MeshFaceMaterial(
-                    that.create_dice_color_materials(d4_labels[num], that.scale / 2, that.scale * 2 ));
+                    that.create_d4_materials(that.scale / 2, that.scale * 2, d4_labels[num]));
         }
         dice.geometry = geom;
     }
@@ -718,32 +734,27 @@
 
     this.dice_box.prototype.draw_selector = function() {
         this.clear();
-    var step = this.w / 4.5;
-    var textureLoader = new THREE.TextureLoader();
-    var texture = textureLoader.load('../../static/img/background-dice.jpg');
-    
-    //texture.wrapS = THREE.ClampToEdgeWrapping;
-    //texture.wrapT = THREE.ClampToEdgeWrapping;
-    var material = new THREE.MeshBasicMaterial( { map: texture } );
-    this.pane = new THREE.Mesh(new THREE.PlaneGeometry(this.cw * 2, this.ch * 2, 1, 1), material);
-    this.pane.receiveShadow = true;
-    this.pane.position.set(0, 0, 1);
-    this.scene.add(this.pane);
+        var step = this.w / 4.5;
+        this.pane = new THREE.Mesh(new THREE.PlaneGeometry(this.w * 6, this.h * 6, 1, 1), 
+                new THREE.MeshPhongMaterial(that.selector_back_colors));
+        this.pane.receiveShadow = true;
+        this.pane.position.set(0, 0, 1);
+        this.scene.add(this.pane);
 
-    var mouse_captured = false;
+        var mouse_captured = false;
 
-    for (var i = 0, pos = -3; i < that.known_types.length; ++i, ++pos) {
-        var dice = $t.dice['create_' + that.known_types[i]]();
-        dice.position.set(pos * step, 0, step * 0.5);
-        dice.castShadow = true;
-        dice.userData = that.known_types[i];
-        this.dices.push(dice); this.scene.add(dice);
-    }
+        for (var i = 0, pos = -3; i < that.known_types.length; ++i, ++pos) {
+            var dice = $t.dice['create_' + that.known_types[i]]();
+            dice.position.set(pos * step, 0, step * 0.5);
+            dice.castShadow = true;
+            dice.userData = that.known_types[i];
+            this.dices.push(dice); this.scene.add(dice);
+        }
 
-    this.running = (new Date()).getTime();
-    this.last_time = 0;
-    if (this.animate_selector) this.__selector_animate(this.running);
-    else this.renderer.render(this.scene, this.camera);
+        this.running = (new Date()).getTime();
+        this.last_time = 0;
+        if (this.animate_selector) this.__selector_animate(this.running);
+        else this.renderer.render(this.scene, this.camera);
     }
 
     function throw_dices(box, vector, boost, dist, notation_getter, before_roll, after_roll) {

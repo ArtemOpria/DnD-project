@@ -6,7 +6,7 @@ body {
     width: 100%;
     height: 907px;
     background: url("../img/backgroud-create-char-1.png");
-    background-position: center;
+    background-position:bottom;
     background-repeat: no-repeat;
     background-size: cover;
 }
@@ -260,7 +260,7 @@ body {
 }
 
 .list-choice:hover .list-choice-objects {
-    max-height: 540px;
+    max-height: 600px;
 }
 
 /* Тестовий селект */
@@ -299,22 +299,25 @@ body {
 }
 
 .random-stats-button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
     height: 34px;
     width: 163px !important;
     background: #B41616;
     border-radius: 5px;
     font-family: 'Poppins';
-font-style: normal;
-font-weight: 700;
-font-size: 14px;
-line-height: 21px;
-border: 1px solid #000000;
-/* identical to box height, or 150% */
-transition: 0.4s;
-text-align: center;
-cursor: pointer;
-color: #FFFFFF;
-margin-top: 20px;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 21px;
+    border: 1px solid #000000;
+    /* identical to box height, or 150% */
+    transition: 0.4s;
+    text-align: center;
+    cursor: pointer;
+    color: #FFFFFF;
+    margin-top: 20px;
 }
 .random-stats-button:hover{
     border: 1px solid  #B41616;
@@ -336,6 +339,7 @@ margin-top: 20px;
 }
 
 .create-char-stats-caption{
+  position: relative;
     font-family: 'Oswald';
   font-style: normal;
   font-weight: 400;
@@ -344,6 +348,7 @@ margin-top: 20px;
   color: #FFFFFF;
   margin-left: -120px;
   opacity: 0;
+  z-index: -1;
 }
 
 .create-char-stats-caption2{
@@ -393,7 +398,7 @@ color: #FFFFFF;
     width: 100%;
     height: 705px;
     background: url("../img/background-create-char-2.png");
-    background-position: center;
+    background-position: top;
     background-repeat: no-repeat;
     background-size: cover;
 }
