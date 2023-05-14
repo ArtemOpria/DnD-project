@@ -102,7 +102,7 @@ body{
 .product-container{
     width: 707px;
     height: 575px;
-    background: linear-gradient(0deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(img/star-background.jpg);
+    background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(../img/star-background.jpg);
     border-radius: 25px;
 }
 .head-flex{
@@ -235,11 +235,20 @@ color: #FFFFFF;
     
 }
 
-.banner-img1{background:linear-gradient(0deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("img/background-dice-1.png");}
+.banner-img1{
+    border-radius: 25px;
+    background:linear-gradient(0deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(../img/background-dice-1.png);
+}
 
-.banner-img2{background:linear-gradient(0deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("img/background-dice-2.png");}
+.banner-img2{
+    border-radius: 25px;
+    background:linear-gradient(0deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(../img/background-dice-2.png);
+}
 
-.banner-img3{background:linear-gradient(0deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("img/background-dice-3.png");}
+.banner-img3{
+    border-radius: 25px;
+    background:linear-gradient(0deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(../img/background-dice-3.png);
+}
 
 .banner-head p{
     font-family: 'Roboto';
@@ -249,9 +258,9 @@ font-size: 70px;
 line-height: 105px;
 /* identical to box height */
 
-
 color: #FFFFFF;
 }
+
 .banner-text p{
     margin-top: 75px;
     font-family: 'Roboto';
@@ -261,9 +270,9 @@ font-size: 15px;
 line-height: 22px;
 /* identical to box height */
 
-
 color: #FFFFFF;
 }
+
 .banner-button{
     margin-top: 140px;
     display: flex;

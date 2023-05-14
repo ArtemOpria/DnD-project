@@ -10,7 +10,6 @@
 
     <title>Дайси</title>
     <link rel="icon" type="image/x-icon" href="{{url_for('static', filename='img/DnD-ico.ico')}}">
-    <script type="text/javascript" src="../static/js/dice.js"></script>
     <link type="text/css" rel="stylesheet" href="{{url_for('static', filename='css/header-footer-style.css')}}">
     <link type="text/css" rel="stylesheet" href="{{url_for('static', filename='css/style-reset.css')}}">
 
@@ -82,7 +81,7 @@
                 </div>
             </div>
             <div class="center_field">
-                <input type="text" id="set" value="Vadim Gay"></input><br />
+                <input type="text" id="set" value="6d6"></input><br />
                 <button id="clear">Онулити</button>
                 <button style="margin-left: 0.6em" id="throw">Кинути</button>
             </div>
@@ -95,7 +94,6 @@
     <script type="text/javascript" src="../static/js/teal.js"></script>
     <script type="text/javascript" src="../static/js/dice.js"></script>
     <script type="text/javascript" src="../static/js/main.js"></script>
-    <script type="text/javascript" src="../static/js/vadim-gay.js"></script>
     <script type="text/javascript" defer="defer">
         dice_initialize(document.body);
     </script>
