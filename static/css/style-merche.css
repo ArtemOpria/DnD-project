@@ -238,17 +238,17 @@ color: #FFFFFF;
 
 .banner-img1{
     border-radius: 25px;
-    background:linear-gradient(0deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(../img/background-dice-1.png);
+    background:linear-gradient(0deg, rgba(0, 0, 0, 0.7), rgba(0 0 0 / 55%)), url(../img/background-dice-1.png);
 }
 
 .banner-img2{
     border-radius: 25px;
-    background:linear-gradient(0deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(../img/background-dice-2.png);
+    background:linear-gradient(0deg, rgba(0, 0, 0, 0.7), rgba(0 0 0 / 55%)), url(../img/background-dice-2.png);
 }
 
 .banner-img3{
     border-radius: 25px;
-    background:linear-gradient(0deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(../img/background-dice-3.png);
+    background:linear-gradient(0deg, rgba(0, 0, 0, 0.7), rgba(0 0 0 / 55%)), url(../img/background-dice-3.png);
 }
 
 .banner-head p{

@@ -3,6 +3,9 @@ from flask import Flask, Blueprint, render_template, url_for, send_file, request
 from flask_sqlalchemy import SQLAlchemy
 from flask_login import login_user, login_required, current_user, UserMixin, LoginManager, logout_user
 import json
+
+
+
 app = Flask(__name__, static_folder='static')
 db = SQLAlchemy()
 app.config['SECRET_KEY'] = 'thisismysecretkeydonotstealit'
@@ -144,14 +147,24 @@ def detail_bestiary(monsters_name):
     return render_template("bestiary.html", dict_monster_prop=monster_properties, monsters=monsters1, name=name)
 
 
-@app.route("/")
+
+@app.route("/", methods=("POST", "GET"))
 def index():
     if current_user.is_authenticated:
         name = current_user.username
     else:
         name = None
-    return render_template("index.html", name = name)
+    if request.method == "GET":
+        text_name = request.form.get('text_name')
+        email = request.form.get('email')
+        text_area = request.form.get('text_area')
+    return render_template('index.html')
 
+#--------------
+
+
+
+#---------------
 
 @app.route("/merche.html")
 def merche():
@@ -201,7 +214,7 @@ def create_char():
 
         text = ''
         
-        new_attack = Attack(name='Назва заклинання', attack_bonus=1, damage_type='Опис заклинання')
+        new_attack = Attack(name='', attack_bonus=1, damage_type='')
         db.session.add(new_attack)
         db.session.flush()
         attack_id = new_attack.id_attack
@@ -240,7 +253,7 @@ def create_char():
                     checker=True, id_equipment=id_equipment, id_character=id_character)
                 db.session.add(new_ch_equipment)
                 db.session.flush()
-
+        
         db.session.commit()
         return redirect(url_for("charlist"))
     return render_template("create-char.html", name=current_user.username)
@@ -255,7 +268,7 @@ def dice():
     return render_template("dice.html", name = name)
 
 
-@app.route("/character/<id_class_f>")
+@app.route("/character/<id_class_f>", methods=("POST", "GET"))
 @login_required
 def character(id_class_f):
     character_obj = Character.query.filter_by(id_character=id_class_f).first()
@@ -285,9 +298,42 @@ def character(id_class_f):
         'attack_damage': character_obj.attack.damage_type,
         'note': character_obj.note.text,
     }
-    print(character_dict)
+
+    proficiency_ch_obj = CharacterProficiency.query.filter_by(id_character=id_class_f).all()
+    proficiencies_list = [cp.proficiency.proficiency for cp in proficiency_ch_obj]
+
+    char_to_update = Character.query.get_or_404(id_class_f)
+    if request.method == "POST":
+        char_to_update.name = request.form.get('name_ch')
+        char_to_update.level = request.form.get('level')
+        char_to_update.armor_class = request.form.get('armor_class')
+        char_to_update.speed = request.form.get('speed')
+        char_to_update.initiative = request.form.get('initiative')
+        char_to_update.health_current = request.form.get('health_current')
+        char_to_update.health_max = request.form.get('health_max')
+        char_to_update.proficiency_bonus = request.form.get('proficiency_bonus')
+        char_to_update.inspiration = request.form.get('inspiration')
+        char_to_update.strength = request.form.get('strength')
+        char_to_update.dexterity = request.form.get('dexterity')
+        char_to_update.constitution = request.form.get('constitution')
+        char_to_update.intelligence = request.form.get('intelligence')
+        char_to_update.wisdom = request.form.get('wisdom')
+        char_to_update.charisma = request.form.get('charisma')
+        char_to_update.attack.name = request.form.get('attack_name')
+        char_to_update.attack.attack_bonus = request.form.get('attack_bonus')
+        char_to_update.attack.damage_type = request.form.get('damage_type')
+        char_to_update.note.text = request.form.get('note')
+        try:
+            db.session.commit()
+            return redirect(url_for('character', id_class_f=id_class_f))
+        except Exception as e:
+            db.session.rollback()
+            print("Помилка оновлення в БД:", e)
+        
+
+    print(proficiencies_list)
     
-    return render_template("character.html", character=character_dict, name=current_user.username)
+    return render_template("character.html", character=character_dict, name=current_user.username, proficiencies_list=proficiencies_list)
 
 
 
@@ -336,7 +382,12 @@ def registration():
                 print("Помилка додавання в БД:", e)
     return render_template("registration.html")
 
+#------------Bot--------
 
+
+
+
+#------------DB---------
 class UserType(db.Model):
     id_user_type = db.Column(db.Integer, primary_key=True, autoincrement=True)
     user_type = db.Column(db.String(50), nullable=False)
@@ -447,6 +498,7 @@ class CharacterEquipment(db.Model):
         'character.id_character'), nullable=False)
     character = db.relationship('Character', backref='character_equipments')
 
+#------------Бот--------------------------
 
 if __name__ == "__main__":
     print('Сайт Працуэ')

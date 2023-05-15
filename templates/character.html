@@ -24,11 +24,11 @@
             <div class="header-logo"><a href="/"><img src="../static/img/logo.png"></a></div>
             <div class="header-nav">
 
-                <a href="/bestiary/aboleth" target="_blank">
+                <a href="/bestiary/aboleth" >
                     <p class="header-nav-element">Бестіарій</p>
                 </a>
 
-                <a href="/dice.html" target="_blank">
+                <a href="/dice.html" >
                     <p class="header-nav-element">Дайси</p>
                 </a>
 
@@ -74,7 +74,7 @@
                         <div class="character-caption-element-double">
                             <div class="character-caption-element"><img
                                     src="{{url_for('static', filename='/img/character-logo.png')}}"></div>
-                            <div class="character-caption-element"><input class="name-input" maxlength="50" type="text" value = "{{character['name']}}"
+                            <div class="character-caption-element"><input class="name-input" maxlength="50" type="text" value = "{{character['name']}}" name="name_ch"
                                     placeholder="Ім'я персонажа"></div>
                         </div>
                         <div class="character-caption-element-double">
@@ -88,9 +88,9 @@
                             </div>
                         </div>
                         <div class="character-caption-element-double">
-                            <div class="character-caption-element">
+                            <div class="character-caption-element less-num-ud">
                                 <p>Рівень:</p>
-                                <input type="number" min="1" max="20" class="input-level" value = "{{character['level']}}"
+                                <input type="number" min="1" max="20" class="input-level" value = "{{character['level']}}" name="level"
                                     onkeydown="return (event.key >= '0' && event.key <= '') || event.key === '.' || event.key === ',' || event.key === 'Backspace' || event.key === 'Delete' || event.key === 'ArrowLeft' || event.key === 'ArrowRight' || event.key === 'Tab'">
                             </div>
                             <div class="character-caption-element race-block-width">
@@ -105,29 +105,29 @@
                     <div class="character-params-element">
                         <p>Клас броні:</p>
                         <img src="{{url_for('static', filename='img/armor-class.png')}}">
-                        <input type="number" min="1" max="100" class="input-level" value = "{{character['armor_class']}}"
+                        <input type="number" min="1" max="100" class="input-level" value = "{{character['armor_class']}}" name="armor_class"
                             onkeydown="return (event.key >= '0' && event.key <= '') || event.key === '.' || event.key === ',' || event.key === 'Backspace' || event.key === 'Delete' || event.key === 'ArrowLeft' || event.key === 'ArrowRight' || event.key === 'Tab'">
                     </div>
                     <div class="character-params-element">
                         <p>Швидкість:</p>
                         <img src="{{url_for('static', filename='img/speed-icon.png')}}">
-                        <input type="number" min="1" max="100" class="input-level" value = "{{character['speed']}}"
+                        <input type="number" min="1" max="100" class="input-level" value = "{{character['speed']}}" name="speed"
                             onkeydown="return (event.key >= '0' && event.key <= '') || event.key === '.' || event.key === ',' || event.key === 'Backspace' || event.key === 'Delete' || event.key === 'ArrowLeft' || event.key === 'ArrowRight' || event.key === 'Tab'">
                     </div>
                     <div class="character-params-element">
                         <p>Інтіціатива:</p>
                         <img src="{{url_for('static', filename='/img/initiative.png')}}">
-                        <input type="number" min="0" max="100" class="input-level" value="{{character['initiative']}}"
+                        <input type="number" min="0" max="100" class="input-level" value="{{character['initiative']}}" name="initiative"
                             onkeydown="return (event.key >= '0' && event.key <= '') || event.key === '.' || event.key === ',' || event.key === 'Backspace' || event.key === 'Delete' || event.key === 'ArrowLeft' || event.key === 'ArrowRight' || event.key === 'Tab'">
                     </div>
                     <div class="character-params-element">
                         <p>Здоров'я:</p>
                         <img src="{{url_for('static', filename='/img/health.png')}}">
                         <div class="health-flex">
-                            <input type="number" min="0" max="1000" class="input-level" value="{{character['health_current']}}"
+                            <input type="number" min="0" max="1000" class="input-level" value="{{character['health_current']}}" name="health_current"
                                 onkeydown="return (event.key >= '0' && event.key <= '') || event.key === '.' || event.key === ',' || event.key === 'Backspace' || event.key === 'Delete' || event.key === 'ArrowLeft' || event.key === 'ArrowRight' || event.key === 'Tab'">
                             <p>/</p>
-                            <input type="number" min="0" max="1000" class="input-level" value="{{character['health_max']}}"
+                            <input type="number" min="0" max="1000" class="input-level" value="{{character['health_max']}}" name="health_max"
                                 onkeydown="return (event.key >= '0' && event.key <= '') || event.key === '.' || event.key === ',' || event.key === 'Backspace' || event.key === 'Delete' || event.key === 'ArrowLeft' || event.key === 'ArrowRight' || event.key === 'Tab'">
                         </div>
                     </div>
@@ -141,7 +141,7 @@
                             <div class="character-bonus-text">
                                 <p>Бонус майстерності:</p>
                             </div>
-                            <input type="number" min="0" max="100" class="input-level" value="{{character['proficiency_bonus']}}"
+                            <input type="number" min="0" max="100" class="input-level" value="{{character['proficiency_bonus']}}" id="masteryBonus" name="proficiency_bonus"
                                 onkeydown="return (event.key >= '0' && event.key <= '') || event.key === '.' || event.key === ',' || event.key === 'Backspace' || event.key === 'Delete' || event.key === 'ArrowLeft' || event.key === 'ArrowRight' || event.key === 'Tab'">
                         </div>
                     </div>
@@ -149,9 +149,9 @@
                         <img src="{{url_for('static', filename='/img/inspiration.png')}}">
                         <div class="character-bonus-element-info">
                             <div class="character-bonus-text">
-                                <p>Натхнення:</p>
+                                <p>Натхнення</p>
                             </div>
-                            <input type="number" min="0" max="100" class="input-level" value="{{character['inspiration']}}"
+                            <input type="number" min="0" max="100" class="input-level" value="{{character['inspiration']}}" name="inspiration"
                                 onkeydown="return (event.key >= '0' && event.key <= '') || event.key === '.' || event.key === ',' || event.key === 'Backspace' || event.key === 'Delete' || event.key === 'ArrowLeft' || event.key === 'ArrowRight' || event.key === 'Tab'">
                         </div>
                     </div>
@@ -165,20 +165,20 @@
                                     <p>Сила</p>
                                 </div>
                                 <img src="{{url_for('static', filename='/img/strength.png')}}">
-                                <input type="number" min="1" max="20" class="input-level" value="{{character['strength']}}"
-                                    onkeydown="return (event.key >= '0' && event.key <= '') || event.key === '.' || event.key === ',' || event.key === 'Backspace' || event.key === 'Delete' || event.key === 'ArrowLeft' || event.key === 'ArrowRight' || event.key === 'Tab'">
+                                <input type="number" min="1" max="20" class="input-level parent" value="{{character['strength']}}" name="strength"
+                                id="parent1" onkeydown="return (event.key >= '0' && event.key <= '') || event.key === '.' || event.key === ',' || event.key === 'Backspace' || event.key === 'Delete' || event.key === 'ArrowLeft' || event.key === 'ArrowRight' || event.key === 'Tab'">
                             </div>
                             <div class="character-stats-prof-list">
                                 <div class="character-stats-prof-list-element">
-                                    <input type="checkbox" class="character-stats-check save-throw">
-                                    <input type="number" min="1" max="99" class="input-level center-input" value="1"
-                                        onkeydown="return (event.key >= '0' && event.key <= '') || event.key === '.' || event.key === ',' || event.key === 'Backspace' || event.key === 'Delete' || event.key === 'ArrowLeft' || event.key === 'ArrowRight' || event.key === 'Tab'">
+                                    <input type="checkbox" class="character-stats-check save-throw" name="Рятівні кидки Сила" value="true" {% if 'Рятівні кидки Сила' in proficiencies_list %}checked{% endif %}> 
+                                    <input type="number" min="0" max="99" class="input-level child center-input" value="1" 
+                                    id="child1_1" data-parent="parent1" onkeydown="return (event.key >= '0' && event.key <= '') || event.key === '.' || event.key === ',' || event.key === 'Backspace' || event.key === 'Delete' || event.key === 'ArrowLeft' || event.key === 'ArrowRight' || event.key === 'Tab'">
                                     <p>Рятівні кидки</p>
                                 </div>
                                 <div class="character-stats-prof-list-element">
-                                    <input type="checkbox" class="character-stats-check regular-throw">
-                                    <input type="number" min="1" max="99" class="input-level center-input" value="1"
-                                        onkeydown="return (event.key >= '0' && event.key <= '') || event.key === '.' || event.key === ',' || event.key === 'Backspace' || event.key === 'Delete' || event.key === 'ArrowLeft' || event.key === 'ArrowRight' || event.key === 'Tab'">
+                                    <input type="checkbox" class="character-stats-check regular-throw" name="Атлетика" value="true" {% if 'Атлетика' in proficiencies_list %}checked{% endif %}>
+                                    <input type="number" min="0" max="99" class="input-level child center-input" value="1" 
+                                    id="child1_1"  data-parent="parent1" onkeydown="return (event.key >= '0' && event.key <= '') || event.key === '.' || event.key === ',' || event.key === 'Backspace' || event.key === 'Delete' || event.key === 'ArrowLeft' || event.key === 'ArrowRight' || event.key === 'Tab'">
                                     <p>Атлетика</p>
                                 </div>
                             </div>
@@ -189,44 +189,44 @@
                                     <p>Інтелект</p>
                                 </div>
                                 <img src="{{url_for('static', filename='/img/intelect.png')}}">
-                                <input type="number" min="1" max="20" class="input-level" value="{{character['intelligence']}}"
-                                    onkeydown="return (event.key >= '0' && event.key <= '') || event.key === '.' || event.key === ',' || event.key === 'Backspace' || event.key === 'Delete' || event.key === 'ArrowLeft' || event.key === 'ArrowRight' || event.key === 'Tab'">
+                                <input type="number" min="1" max="20" class="input-level parent" value="{{character['intelligence']}}" name="intelligence"
+                                id="parent2" onkeydown="return (event.key >= '0' && event.key <= '') || event.key === '.' || event.key === ',' || event.key === 'Backspace' || event.key === 'Delete' || event.key === 'ArrowLeft' || event.key === 'ArrowRight' || event.key === 'Tab'">
                             </div>
                             <div class="character-stats-prof-list">
                                 <div class="character-stats-prof-list-element">
-                                    <input type="checkbox" class="character-stats-check save-throw">
-                                    <input type="number" min="1" max="99" class="input-level center-input" value="1"
-                                        onkeydown="return (event.key >= '0' && event.key <= '') || event.key === '.' || event.key === ',' || event.key === 'Backspace' || event.key === 'Delete' || event.key === 'ArrowLeft' || event.key === 'ArrowRight' || event.key === 'Tab'">
+                                    <input type="checkbox" class="character-stats-check save-throw" value="true" {% if 'Рятівні кидки Інтелект' in proficiencies_list %}checked{% endif %}>
+                                    <input type="number" min="0" max="99" class="input-level center-input child" value="1" name="Рятівні кидки Інтелект"
+                                    id="child2_2" data-parent="parent2" onkeydown="return (event.key >= '0' && event.key <= '') || event.key === '.' || event.key === ',' || event.key === 'Backspace' || event.key === 'Delete' || event.key === 'ArrowLeft' || event.key === 'ArrowRight' || event.key === 'Tab'">
                                     <p>Рятівні кидки</p>
                                 </div>
                                 <div class="character-stats-prof-list-element">
-                                    <input type="checkbox" class="character-stats-check regular-throw">
-                                    <input type="number" min="1" max="99" class="input-level center-input" value="1"
-                                        onkeydown="return (event.key >= '0' && event.key <= '') || event.key === '.' || event.key === ',' || event.key === 'Backspace' || event.key === 'Delete' || event.key === 'ArrowLeft' || event.key === 'ArrowRight' || event.key === 'Tab'">
+                                    <input type="checkbox" class="character-stats-check regular-throw" value="true" {% if 'Магія' in proficiencies_list %}checked{% endif %}>
+                                    <input type="number" min="0" max="99" class="input-level center-input child" value="1"
+                                    id="child2_2" data-parent="parent2"    onkeydown="return (event.key >= '0' && event.key <= '') || event.key === '.' || event.key === ',' || event.key === 'Backspace' || event.key === 'Delete' || event.key === 'ArrowLeft' || event.key === 'ArrowRight' || event.key === 'Tab'">
                                     <p>Магія</p>
                                 </div>
                                 <div class="character-stats-prof-list-element">
-                                    <input type="checkbox" class="character-stats-check regular-throw">
-                                    <input type="number" min="1" max="99" class="input-level center-input" value="1"
-                                        onkeydown="return (event.key >= '0' && event.key <= '') || event.key === '.' || event.key === ',' || event.key === 'Backspace' || event.key === 'Delete' || event.key === 'ArrowLeft' || event.key === 'ArrowRight' || event.key === 'Tab'">
+                                    <input type="checkbox" class="character-stats-check regular-throw" value="true" {% if 'Історія' in proficiencies_list %}checked{% endif %}>
+                                    <input type="number" min="0" max="99" class="input-level center-input child" value="1"
+                                    id="child1_1" data-parent="parent2"  onkeydown="return (event.key >= '0' && event.key <= '') || event.key === '.' || event.key === ',' || event.key === 'Backspace' || event.key === 'Delete' || event.key === 'ArrowLeft' || event.key === 'ArrowRight' || event.key === 'Tab'">
                                     <p>Історія</p>
                                 </div>
                                 <div class="character-stats-prof-list-element">
-                                    <input type="checkbox" class="character-stats-check regular-throw">
-                                    <input type="number" min="1" max="99" class="input-level center-input" value="1"
-                                        onkeydown="return (event.key >= '0' && event.key <= '') || event.key === '.' || event.key === ',' || event.key === 'Backspace' || event.key === 'Delete' || event.key === 'ArrowLeft' || event.key === 'ArrowRight' || event.key === 'Tab'">
+                                    <input type="checkbox" class="character-stats-check regular-throw" value="true" {% if 'Природознавство' in proficiencies_list %}checked{% endif %}>
+                                    <input type="number" min="0" max="99" class="input-level center-input child" value="1"
+                                    id="child1_1" data-parent="parent2"    onkeydown="return (event.key >= '0' && event.key <= '') || event.key === '.' || event.key === ',' || event.key === 'Backspace' || event.key === 'Delete' || event.key === 'ArrowLeft' || event.key === 'ArrowRight' || event.key === 'Tab'">
                                     <p>Природознавство</p>
                                 </div>
                                 <div class="character-stats-prof-list-element">
-                                    <input type="checkbox" class="character-stats-check regular-throw">
-                                    <input type="number" min="1" max="99" class="input-level center-input" value="1"
-                                        onkeydown="return (event.key >= '0' && event.key <= '') || event.key === '.' || event.key === ',' || event.key === 'Backspace' || event.key === 'Delete' || event.key === 'ArrowLeft' || event.key === 'ArrowRight' || event.key === 'Tab'">
+                                    <input type="checkbox" class="character-stats-check regular-throw" value="true" {% if 'Релігія' in proficiencies_list %}checked{% endif %}>
+                                    <input type="number" min="0" max="99" class="input-level center-input child" value="1"
+                                    id="child1_1" data-parent="parent2"    onkeydown="return (event.key >= '0' && event.key <= '') || event.key === '.' || event.key === ',' || event.key === 'Backspace' || event.key === 'Delete' || event.key === 'ArrowLeft' || event.key === 'ArrowRight' || event.key === 'Tab'">
                                     <p>Релігія</p>
                                 </div>
                                 <div class="character-stats-prof-list-element">
-                                    <input type="checkbox" class="character-stats-check regular-throw">
-                                    <input type="number" min="1" max="99" class="input-level center-input" value="1"
-                                        onkeydown="return (event.key >= '0' && event.key <= '') || event.key === '.' || event.key === ',' || event.key === 'Backspace' || event.key === 'Delete' || event.key === 'ArrowLeft' || event.key === 'ArrowRight' || event.key === 'Tab'">
+                                    <input type="checkbox" class="character-stats-check regular-throw" value="true" {% if 'Розслідування' in proficiencies_list %}checked{% endif %}>
+                                    <input type="number" min="0" max="99" class="input-level center-input child" value="1"
+                                    id="child1_1" data-parent="parent2"    onkeydown="return (event.key >= '0' && event.key <= '') || event.key === '.' || event.key === ',' || event.key === 'Backspace' || event.key === 'Delete' || event.key === 'ArrowLeft' || event.key === 'ArrowRight' || event.key === 'Tab'">
                                     <p>Розслідування</p>
                                 </div>
                             </div>
@@ -239,32 +239,32 @@
                                     <p>Спритність</p>
                                 </div>
                                 <img src="{{url_for('static', filename='/img/dexterity.png')}}">
-                                <input type="number" min="1" max="20" class="input-level" value="{{character['dexterity']}}"
-                                    onkeydown="return (event.key >= '0' && event.key <= '') || event.key === '.' || event.key === ',' || event.key === 'Backspace' || event.key === 'Delete' || event.key === 'ArrowLeft' || event.key === 'ArrowRight' || event.key === 'Tab'">
+                                <input type="number" min="1" max="20" class="input-level parent" value="{{character['dexterity']}}" name="dexterity"
+                                id="parent3"   onkeydown="return (event.key >= '0' && event.key <= '') || event.key === '.' || event.key === ',' || event.key === 'Backspace' || event.key === 'Delete' || event.key === 'ArrowLeft' || event.key === 'ArrowRight' || event.key === 'Tab'">
                             </div>
                             <div class="character-stats-prof-list">
                                 <div class="character-stats-prof-list-element">
-                                    <input type="checkbox" class="character-stats-check save-throw">
-                                    <input type="number" min="1" max="99" class="input-level center-input" value="1"
-                                        onkeydown="return (event.key >= '0' && event.key <= '') || event.key === '.' || event.key === ',' || event.key === 'Backspace' || event.key === 'Delete' || event.key === 'ArrowLeft' || event.key === 'ArrowRight' || event.key === 'Tab'">
+                                    <input type="checkbox" class="character-stats-check save-throw" value="true" {% if 'Рятівні кидки Спритність' in proficiencies_list %}checked{% endif %}>
+                                    <input type="number" min="0" max="99" class="input-level center-input child" value="1"
+                                    id="child1_1" data-parent="parent3"    onkeydown="return (event.key >= '0' && event.key <= '') || event.key === '.' || event.key === ',' || event.key === 'Backspace' || event.key === 'Delete' || event.key === 'ArrowLeft' || event.key === 'ArrowRight' || event.key === 'Tab'">
                                     <p>Рятівні кидки</p>
                                 </div>
                                 <div class="character-stats-prof-list-element">
-                                    <input type="checkbox" class="character-stats-check regular-throw">
-                                    <input type="number" min="1" max="99" class="input-level center-input" value="1"
-                                        onkeydown="return (event.key >= '0' && event.key <= '') || event.key === '.' || event.key === ',' || event.key === 'Backspace' || event.key === 'Delete' || event.key === 'ArrowLeft' || event.key === 'ArrowRight' || event.key === 'Tab'">
+                                    <input type="checkbox" class="character-stats-check regular-throw" value="true" {% if 'Акробатика' in proficiencies_list %}checked{% endif %}>
+                                    <input type="number" min="0" max="99" class="input-level center-input child" value="1"
+                                    id="child1_1" data-parent="parent3"    onkeydown="return (event.key >= '0' && event.key <= '') || event.key === '.' || event.key === ',' || event.key === 'Backspace' || event.key === 'Delete' || event.key === 'ArrowLeft' || event.key === 'ArrowRight' || event.key === 'Tab'">
                                     <p>Акробатика</p>
                                 </div>
                                 <div class="character-stats-prof-list-element">
-                                    <input type="checkbox" class="character-stats-check regular-throw">
-                                    <input type="number" min="1" max="99" class="input-level center-input" value="1"
-                                        onkeydown="return (event.key >= '0' && event.key <= '') || event.key === '.' || event.key === ',' || event.key === 'Backspace' || event.key === 'Delete' || event.key === 'ArrowLeft' || event.key === 'ArrowRight' || event.key === 'Tab'">
+                                    <input type="checkbox" class="character-stats-check regular-throw" value="true" {% if 'Непомітність' in proficiencies_list %}checked{% endif %}>
+                                    <input type="number" min="0" max="99" class="input-level center-input child" value="1"
+                                    id="child1_1" data-parent="parent3"    onkeydown="return (event.key >= '0' && event.key <= '') || event.key === '.' || event.key === ',' || event.key === 'Backspace' || event.key === 'Delete' || event.key === 'ArrowLeft' || event.key === 'ArrowRight' || event.key === 'Tab'">
                                     <p>Непомітність</p>
                                 </div>
                                 <div class="character-stats-prof-list-element">
-                                    <input type="checkbox" class="character-stats-check regular-throw">
-                                    <input type="number" min="1" max="99" class="input-level center-input" value="1"
-                                        onkeydown="return (event.key >= '0' && event.key <= '') || event.key === '.' || event.key === ',' || event.key === 'Backspace' || event.key === 'Delete' || event.key === 'ArrowLeft' || event.key === 'ArrowRight' || event.key === 'Tab'">
+                                    <input type="checkbox" class="character-stats-check regular-throw" value="true" {% if 'Легка рука' in proficiencies_list %}checked{% endif %}>
+                                    <input type="number" min="0" max="99" class="input-level center-input child" value="1"
+                                    id="child1_1" data-parent="parent3"   onkeydown="return (event.key >= '0' && event.key <= '') || event.key === '.' || event.key === ',' || event.key === 'Backspace' || event.key === 'Delete' || event.key === 'ArrowLeft' || event.key === 'ArrowRight' || event.key === 'Tab'">
                                     <p>Легка рука</p>
                                 </div>
                             </div>
@@ -275,44 +275,44 @@
                                     <p>Мудрість</p>
                                 </div>
                                 <img src="{{url_for('static', filename='/img/wisdom.png')}}">
-                                <input type="number" min="1" max="20" class="input-level" value="{{character['wisdom']}}"
-                                    onkeydown="return (event.key >= '0' && event.key <= '') || event.key === '.' || event.key === ',' || event.key === 'Backspace' || event.key === 'Delete' || event.key === 'ArrowLeft' || event.key === 'ArrowRight' || event.key === 'Tab'">
+                                <input type="number" min="1" max="20" class="input-level parent" value="{{character['wisdom']}}" name="wisdom"
+                                id="parent4"    onkeydown="return (event.key >= '0' && event.key <= '') || event.key === '.' || event.key === ',' || event.key === 'Backspace' || event.key === 'Delete' || event.key === 'ArrowLeft' || event.key === 'ArrowRight' || event.key === 'Tab'">
                             </div>
                             <div class="character-stats-prof-list">
                                 <div class="character-stats-prof-list-element">
-                                    <input type="checkbox" class="character-stats-check save-throw">
-                                    <input type="number" min="1" max="99" class="input-level center-input" value="1"
-                                        onkeydown="return (event.key >= '0' && event.key <= '') || event.key === '.' || event.key === ',' || event.key === 'Backspace' || event.key === 'Delete' || event.key === 'ArrowLeft' || event.key === 'ArrowRight' || event.key === 'Tab'">
+                                    <input type="checkbox" class="character-stats-check save-throw" value="true" {% if 'Рятівні кидки Мудрість' in proficiencies_list %}checked{% endif %}>
+                                    <input type="number" min="0" max="99" class="input-level center-input child" value="1"
+                                    id="child1_1" data-parent="parent4"    onkeydown="return (event.key >= '0' && event.key <= '') || event.key === '.' || event.key === ',' || event.key === 'Backspace' || event.key === 'Delete' || event.key === 'ArrowLeft' || event.key === 'ArrowRight' || event.key === 'Tab'">
                                     <p>Рятівні кидки</p>
                                 </div>
                                 <div class="character-stats-prof-list-element">
-                                    <input type="checkbox" class="character-stats-check regular-throw">
-                                    <input type="number" min="1" max="99" class="input-level center-input" value="1"
-                                        onkeydown="return (event.key >= '0' && event.key <= '') || event.key === '.' || event.key === ',' || event.key === 'Backspace' || event.key === 'Delete' || event.key === 'ArrowLeft' || event.key === 'ArrowRight' || event.key === 'Tab'">
+                                    <input type="checkbox" class="character-stats-check regular-throw" value="true" {% if 'Виживання' in proficiencies_list %}checked{% endif %}>
+                                    <input type="number" min="0" max="99" class="input-level center-input child" value="1"
+                                    id="child1_1" data-parent="parent4"    onkeydown="return (event.key >= '0' && event.key <= '') || event.key === '.' || event.key === ',' || event.key === 'Backspace' || event.key === 'Delete' || event.key === 'ArrowLeft' || event.key === 'ArrowRight' || event.key === 'Tab'">
                                     <p>Виживання</p>
                                 </div>
                                 <div class="character-stats-prof-list-element">
-                                    <input type="checkbox" class="character-stats-check regular-throw">
-                                    <input type="number" min="1" max="99" class="input-level center-input" value="1"
-                                        onkeydown="return (event.key >= '0' && event.key <= '') || event.key === '.' || event.key === ',' || event.key === 'Backspace' || event.key === 'Delete' || event.key === 'ArrowLeft' || event.key === 'ArrowRight' || event.key === 'Tab'">
+                                    <input type="checkbox" class="character-stats-check regular-throw" value="true" {% if 'Медицина' in proficiencies_list %}checked{% endif %}>
+                                    <input type="number" min="0" max="99" class="input-level center-input child" value="1"
+                                    id="child1_1" data-parent="parent4"    onkeydown="return (event.key >= '0' && event.key <= '') || event.key === '.' || event.key === ',' || event.key === 'Backspace' || event.key === 'Delete' || event.key === 'ArrowLeft' || event.key === 'ArrowRight' || event.key === 'Tab'">
                                     <p>Медицина</p>
                                 </div>
                                 <div class="character-stats-prof-list-element">
-                                    <input type="checkbox" class="character-stats-check regular-throw">
-                                    <input type="number" min="1" max="99" class="input-level center-input" value="1"
-                                        onkeydown="return (event.key >= '0' && event.key <= '') || event.key === '.' || event.key === ',' || event.key === 'Backspace' || event.key === 'Delete' || event.key === 'ArrowLeft' || event.key === 'ArrowRight' || event.key === 'Tab'">
+                                    <input type="checkbox" class="character-stats-check regular-throw" value="true" {% if 'Приборкання' in proficiencies_list %}checked{% endif %}>
+                                    <input type="number" min="0" max="99" class="input-level center-input child" value="1"
+                                    id="child1_1" data-parent="parent4"    onkeydown="return (event.key >= '0' && event.key <= '') || event.key === '.' || event.key === ',' || event.key === 'Backspace' || event.key === 'Delete' || event.key === 'ArrowLeft' || event.key === 'ArrowRight' || event.key === 'Tab'">
                                     <p>Приборкання</p>
                                 </div>
                                 <div class="character-stats-prof-list-element">
-                                    <input type="checkbox" class="character-stats-check regular-throw">
-                                    <input type="number" min="1" max="99" class="input-level center-input" value="1"
-                                        onkeydown="return (event.key >= '0' && event.key <= '') || event.key === '.' || event.key === ',' || event.key === 'Backspace' || event.key === 'Delete' || event.key === 'ArrowLeft' || event.key === 'ArrowRight' || event.key === 'Tab'">
+                                    <input type="checkbox" class="character-stats-check regular-throw" value="true" {% if 'Проникливість' in proficiencies_list %}checked{% endif %}>
+                                    <input type="number" min="0" max="99" class="input-level center-input child" value="1"
+                                    id="child1_1" data-parent="parent4"    onkeydown="return (event.key >= '0' && event.key <= '') || event.key === '.' || event.key === ',' || event.key === 'Backspace' || event.key === 'Delete' || event.key === 'ArrowLeft' || event.key === 'ArrowRight' || event.key === 'Tab'">
                                     <p>Проникливість</p>
                                 </div>
                                 <div class="character-stats-prof-list-element">
-                                    <input type="checkbox" class="character-stats-check regular-throw">
-                                    <input type="number" min="1" max="99" class="input-level center-input" value="1"
-                                        onkeydown="return (event.key >= '0' && event.key <= '') || event.key === '.' || event.key === ',' || event.key === 'Backspace' || event.key === 'Delete' || event.key === 'ArrowLeft' || event.key === 'ArrowRight' || event.key === 'Tab'">
+                                    <input type="checkbox" class="character-stats-check regular-throw" value="true" {% if 'Уважність' in proficiencies_list %}checked{% endif %}>
+                                    <input type="number" min="0" max="99" class="input-level center-input child" value="1"
+                                    id="child1_1" data-parent="parent4"    onkeydown="return (event.key >= '0' && event.key <= '') || event.key === '.' || event.key === ',' || event.key === 'Backspace' || event.key === 'Delete' || event.key === 'ArrowLeft' || event.key === 'ArrowRight' || event.key === 'Tab'">
                                     <p>Уважність</p>
                                 </div>
                             </div>
@@ -325,14 +325,14 @@
                                     <p>Статура</p>
                                 </div>
                                 <img src="{{url_for('static', filename='/img/constitution.png')}}">
-                                <input type="number" min="1" max="20" class="input-level" value="{{character['constitution']}}"
-                                    onkeydown="return (event.key >= '0' && event.key <= '') || event.key === '.' || event.key === ',' || event.key === 'Backspace' || event.key === 'Delete' || event.key === 'ArrowLeft' || event.key === 'ArrowRight' || event.key === 'Tab'">
+                                <input type="number" min="1" max="20" class="input-level parent" value="{{character['constitution']}}" name="constitution"
+                                id="parent5"    onkeydown="return (event.key >= '0' && event.key <= '') || event.key === '.' || event.key === ',' || event.key === 'Backspace' || event.key === 'Delete' || event.key === 'ArrowLeft' || event.key === 'ArrowRight' || event.key === 'Tab'">
                             </div>
                             <div class="character-stats-prof-list">
                                 <div class="character-stats-prof-list-element">
-                                    <input type="checkbox" class="character-stats-check save-throw">
-                                    <input type="number" min="1" max="99" class="input-level center-input" value="{{character['charisma']}}"
-                                        onkeydown="return (event.key >= '0' && event.key <= '') || event.key === '.' || event.key === ',' || event.key === 'Backspace' || event.key === 'Delete' || event.key === 'ArrowLeft' || event.key === 'ArrowRight' || event.key === 'Tab'">
+                                    <input type="checkbox" class="character-stats-check save-throw" value="true" {% if 'Рятівні кидки Статура' in proficiencies_list %}checked{% endif %}>
+                                    <input type="number" min="0" max="99" class="input-level center-input child" value="{{character['charisma']}}"
+                                    id="child1_1" data-parent="parent5"    onkeydown="return (event.key >= '0' && event.key <= '') || event.key === '.' || event.key === ',' || event.key === 'Backspace' || event.key === 'Delete' || event.key === 'ArrowLeft' || event.key === 'ArrowRight' || event.key === 'Tab'">
                                     <p>Рятівні кидки</p>
                                 </div>
                             </div>
@@ -343,38 +343,38 @@
                                     <p>Харизма</p>
                                 </div>
                                 <img src="{{url_for('static', filename='/img/charisma.png')}}">
-                                <input type="number" min="1" max="20" class="input-level" value="{{character['charisma']}}"
-                                    onkeydown="return (event.key >= '0' && event.key <= '') || event.key === '.' || event.key === ',' || event.key === 'Backspace' || event.key === 'Delete' || event.key === 'ArrowLeft' || event.key === 'ArrowRight' || event.key === 'Tab'">
+                                <input type="number" min="1" max="20" class="input-level parent" value="{{character['charisma']}}" name="charisma"
+                                id="parent6"    onkeydown="return (event.key >= '0' && event.key <= '') || event.key === '.' || event.key === ',' || event.key === 'Backspace' || event.key === 'Delete' || event.key === 'ArrowLeft' || event.key === 'ArrowRight' || event.key === 'Tab'">
                             </div>
                             <div class="character-stats-prof-list">
                                 <div class="character-stats-prof-list-element">
-                                    <input type="checkbox" class="character-stats-check save-throw">
-                                    <input type="number" min="1" max="99" class="input-level center-input" value="1"
-                                        onkeydown="return (event.key >= '0' && event.key <= '') || event.key === '.' || event.key === ',' || event.key === 'Backspace' || event.key === 'Delete' || event.key === 'ArrowLeft' || event.key === 'ArrowRight' || event.key === 'Tab'">
+                                    <input type="checkbox" class="character-stats-check save-throw" value="true" {% if 'Рятівні кидки Харизма' in proficiencies_list %}checked{% endif %}>
+                                    <input type="number" min="0" max="99" class="input-level center-input child" value="1"
+                                    id="child1_1" data-parent="parent6"   onkeydown="return (event.key >= '0' && event.key <= '') || event.key === '.' || event.key === ',' || event.key === 'Backspace' || event.key === 'Delete' || event.key === 'ArrowLeft' || event.key === 'ArrowRight' || event.key === 'Tab'">
                                     <p>Рятівні кидки</p>
                                 </div>
                                 <div class="character-stats-prof-list-element">
-                                    <input type="checkbox" class="character-stats-check regular-throw">
-                                    <input type="number" min="1" max="99" class="input-level center-input" value="1"
-                                        onkeydown="return (event.key >= '0' && event.key <= '') || event.key === '.' || event.key === ',' || event.key === 'Backspace' || event.key === 'Delete' || event.key === 'ArrowLeft' || event.key === 'ArrowRight' || event.key === 'Tab'">
+                                    <input type="checkbox" class="character-stats-check regular-throw" value="true" {% if 'Артистизм' in proficiencies_list %}checked{% endif %}>
+                                    <input type="number" min="0" max="99" class="input-level center-input child" value="1"
+                                    id="child1_1" data-parent="parent6"    onkeydown="return (event.key >= '0' && event.key <= '') || event.key === '.' || event.key === ',' || event.key === 'Backspace' || event.key === 'Delete' || event.key === 'ArrowLeft' || event.key === 'ArrowRight' || event.key === 'Tab'">
                                     <p>Артистизм</p>
                                 </div>
                                 <div class="character-stats-prof-list-element">
-                                    <input type="checkbox" class="character-stats-check regular-throw">
-                                    <input type="number" min="1" max="99" class="input-level center-input" value="1"
-                                        onkeydown="return (event.key >= '0' && event.key <= '') || event.key === '.' || event.key === ',' || event.key === 'Backspace' || event.key === 'Delete' || event.key === 'ArrowLeft' || event.key === 'ArrowRight' || event.key === 'Tab'">
+                                    <input type="checkbox" class="character-stats-check regular-throw" value="true" {% if 'Залякування' in proficiencies_list %}checked{% endif %}>
+                                    <input type="number" min="0" max="99" class="input-level center-input child" value="1"
+                                    id="child1_1" data-parent="parent6"    onkeydown="return (event.key >= '0' && event.key <= '') || event.key === '.' || event.key === ',' || event.key === 'Backspace' || event.key === 'Delete' || event.key === 'ArrowLeft' || event.key === 'ArrowRight' || event.key === 'Tab'">
                                     <p>Залякування</p>
                                 </div>
                                 <div class="character-stats-prof-list-element">
-                                    <input type="checkbox" class="character-stats-check regular-throw">
-                                    <input type="number" min="1" max="99" class="input-level center-input" value="1"
-                                        onkeydown="return (event.key >= '0' && event.key <= '') || event.key === '.' || event.key === ',' || event.key === 'Backspace' || event.key === 'Delete' || event.key === 'ArrowLeft' || event.key === 'ArrowRight' || event.key === 'Tab'">
+                                    <input type="checkbox" class="character-stats-check regular-throw" value="true" {% if 'Обман' in proficiencies_list %}checked{% endif %}>
+                                    <input type="number" min="0" max="99" class="input-level center-input child" value="1"
+                                    id="child1_1" data-parent="parent6"    onkeydown="return (event.key >= '0' && event.key <= '') || event.key === '.' || event.key === ',' || event.key === 'Backspace' || event.key === 'Delete' || event.key === 'ArrowLeft' || event.key === 'ArrowRight' || event.key === 'Tab'">
                                     <p>Обман</p>
                                 </div>
                                 <div class="character-stats-prof-list-element">
-                                    <input type="checkbox" class="character-stats-check regular-throw">
-                                    <input type="number" min="1" max="99" class="input-level center-input" value="1"
-                                        onkeydown="return (event.key >= '0' && event.key <= '') || event.key === '.' || event.key === ',' || event.key === 'Backspace' || event.key === 'Delete' || event.key === 'ArrowLeft' || event.key === 'ArrowRight' || event.key === 'Tab'">
+                                    <input type="checkbox" class="character-stats-check regular-throw" value="true" {% if 'Переконливість' in proficiencies_list %}checked{% endif %}>
+                                    <input type="number" min="0" max="99" class="input-level center-input child" value="1"
+                                    id="child1_1" data-parent="parent6"   onkeydown="return (event.key >= '0' && event.key <= '') || event.key === '.' || event.key === ',' || event.key === 'Backspace' || event.key === 'Delete' || event.key === 'ArrowLeft' || event.key === 'ArrowRight' || event.key === 'Tab'">
                                     <p>Переконливість</p>
                                 </div>
                             </div>
@@ -395,17 +395,17 @@
                             <p>Пошкодження/Тип</p>
                         </div>
                         <div class="character-spells-list-element">
-                            <input class="name-input more-height" maxlength="50" type="text" placeholder="Назва заклинання" value="{{character['attack_name']}}">
-                            <input type="number" min="0" max="100" class="input-level" value="{{character['attack_bonus']}}"
+                            <input class="name-input more-height" maxlength="50" type="text" placeholder="Назва заклинання" value="{{character['attack_name']}}" name="attack_name">
+                            <input type="number" min="0" max="100" class="input-level" value="{{character['attack_bonus']}}" name="attack_bonus"
                                 onkeydown="return (event.key >= '0' && event.key <= '') || event.key === '.' || event.key === ',' || event.key === 'Backspace' || event.key === 'Delete' || event.key === 'ArrowLeft' || event.key === 'ArrowRight' || event.key === 'Tab'">
-                            <input class="name-input more-height" maxlength="50" type="text" placeholder="Опис заклинання" value="{{character['attack_damage']}}">
+                            <input class="name-input more-height" maxlength="50" type="text" placeholder="Опис заклинання" value="{{character['attack_damage']}}" name="damage_type">
                         </div>
                     </div>
                 </div>
 
                 <div class="character-inventory">
                     <div class="character-inventory-caption">Спорядження та інші примітки</div>
-                    <textarea class="name-input textarea-style" maxlength="2000" placeholder="">{{character['note']}}</textarea>
+                    <textarea class="name-input textarea-style" maxlength="2000" placeholder="" name="note">{{character['note']}}</textarea>
                 </div>
             </div>
             <div class="button-flex">
@@ -418,12 +418,12 @@
         <div class="footer-top">
             <div class="footer-logo"><img src="../static/img/logo.png"></div>
             <div class="footer-list">
-                <a href="bestiary/aboleth" target="_blank">
+                <a href="bestiary/aboleth" >
                     <div class="footer-list-element">
                         <p>Бестіарій</p>
                     </div>
                 </a>
-                <a href="dice.html" target="_blank">
+                <a href="dice.html" >
                     <div class="footer-list-element">
                         <p>Дайси</p>
                     </div>
@@ -462,6 +462,7 @@
     </footer>
     <script src="{{url_for('static', filename='js/script-scrollbar.js')}}"></script>
     <script src="{{url_for('static', filename='js/script-header.js')}}"></script>
+    <script src="{{url_for('static', filename='js/script-char-calc.js')}}"></script>
 </body>
 
 </html>
