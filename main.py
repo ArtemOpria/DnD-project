@@ -158,7 +158,7 @@ def index():
         text_name = request.form.get('text_name')
         email = request.form.get('email')
         text_area = request.form.get('text_area')
-    return render_template('index.html')
+    return render_template('index.html', name=name)
 
 #--------------
 
