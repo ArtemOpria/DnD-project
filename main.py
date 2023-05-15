@@ -137,17 +137,29 @@ def detail_bestiary(monsters_name):
                 monster_properties["image"] = data["image"]
             except (IndexError, KeyError):
                 monster_properties["image"] = ""
-    return render_template("bestiary.html", dict_monster_prop=monster_properties, monsters=monsters1)
+    if current_user.is_authenticated:
+        name = current_user.username
+    else:
+        name = None
+    return render_template("bestiary.html", dict_monster_prop=monster_properties, monsters=monsters1, name=name)
 
 
 @app.route("/")
 def index():
-    return render_template("index.html")
+    if current_user.is_authenticated:
+        name = current_user.username
+    else:
+        name = None
+    return render_template("index.html", name = name)
 
 
 @app.route("/merche.html")
 def merche():
-    return render_template("merche.html")
+    if current_user.is_authenticated:
+        name = current_user.username
+    else:
+        name = None
+    return render_template("merche.html", name = name)
 
 
 @app.route('/charlist.html')
@@ -185,8 +197,15 @@ def create_char():
         charisma = request.form.get('charisma')
         answers = request.form.getlist('answer1')
         equipments = request.form.getlist('answer2')
+        health_max = 7 + int(constitution) * 3
 
         text = ''
+        
+        new_attack = Attack(name='Назва заклинання', attack_bonus=1, damage_type='Опис заклинання')
+        db.session.add(new_attack)
+        db.session.flush()
+        attack_id = new_attack.id_attack
+
         for equipment in equipments:
             text = text + equipment + '\n'
         new_note = Note(text=text)
@@ -194,31 +213,33 @@ def create_char():
         db.session.flush()
         note_id = new_note.id_note
 
-        health_max = 7 + int(constitution) * 3
         new_character = Character(name=name_ch, level=level, strength=strength, dexterity=dexterity, constitution=constitution,
                                   intelligence=intelect, wisdom=wisdom, charisma=charisma, armor_class=10, speed=30,
                                   initiative=dexterity, health_current=health_max, health_max=health_max,
-                                  proficiency_bonus=0, inspiration=0, id_attack=0, id_note=note_id, id_class=id_class,
+                                  proficiency_bonus=0, inspiration=0, id_attack=attack_id, id_note=note_id, id_class=id_class,
                                   id_racial_group=id_racial_group, id_user=current_user.id_user)
         db.session.add(new_character)
         db.session.flush()
+
+
         id_character = new_character.id_character
+        if (answers != []):
+            for answer in answers:
+                result3 = Proficiency.query.filter_by(proficiency=answer).first()
+                id_proficiency = result3.id_proficiency
+                new_ch_proficiency = CharacterProficiency(
+                    checker=True, id_proficiency=id_proficiency, id_character=id_character)
+                db.session.add(new_ch_proficiency)
+                db.session.flush()
 
-        for answer in answers:
-            result3 = Proficiency.query.filter_by(proficiency=answer).first()
-            id_proficiency = result3.id_proficiency
-            new_ch_proficiency = CharacterProficiency(
-                checker=True, id_proficiency=id_proficiency, id_character=id_character)
-            db.session.add(new_ch_proficiency)
-            db.session.flush()
-
-        for equipment in equipments:
-            result4 = Equipment.query.filter_by(equipment=equipment).first()
-            id_equipment = result4.id_equipment
-            new_ch_equipment = CharacterEquipment(
-                checker=True, id_equipment=id_equipment, id_character=id_character)
-            db.session.add(new_ch_equipment)
-            db.session.flush()
+        if (equipments != []):
+            for equipment in equipments:
+                result4 = Equipment.query.filter_by(equipment=equipment).first()
+                id_equipment = result4.id_equipment
+                new_ch_equipment = CharacterEquipment(
+                    checker=True, id_equipment=id_equipment, id_character=id_character)
+                db.session.add(new_ch_equipment)
+                db.session.flush()
 
         db.session.commit()
         return redirect(url_for("charlist"))
@@ -227,7 +248,11 @@ def create_char():
 
 @app.route("/dice.html")
 def dice():
-    return render_template("dice.html")
+    if current_user.is_authenticated:
+        name = current_user.username
+    else:
+        name = None
+    return render_template("dice.html", name = name)
 
 
 @app.route("/character/<id_class_f>")
@@ -255,7 +280,9 @@ def character(id_class_f):
         'health_max': character_obj.health_max,
         'proficiency_bonus': character_obj.proficiency_bonus,
         'inspiration': character_obj.inspiration,
-        'attack': character_obj.attack.name,
+        'attack_name': character_obj.attack.name,
+        'attack_bonus': character_obj.attack.attack_bonus,
+        'attack_damage': character_obj.attack.damage_type,
         'note': character_obj.note.text,
     }
     print(character_dict)
