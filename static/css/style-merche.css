@@ -84,6 +84,7 @@ body{
   
   .banner-content{
     opacity: 0;
+    margin-left: -120px;
 } 
 .merche-dice{
     padding-top: 68px;
@@ -262,6 +263,7 @@ color: #FFFFFF;
 }
 
 .banner-text p{
+    padding-right: 50px;
     margin-top: 75px;
     font-family: 'Roboto';
 font-style: normal;

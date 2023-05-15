@@ -28,11 +28,11 @@
                     <p class="header-nav-element">Бестіарій</p>
                 </a>
 
-                <a href="dice.html" target="_blank">
+                <a href="/dice.html" target="_blank">
                     <p class="header-nav-element">Дайси</p>
                 </a>
 
-                <a href="merche.html">
+                <a href="/merche.html">
                     <p class="header-nav-element">Мерч</p>
                 </a>
 
@@ -54,7 +54,7 @@
                             <div class="user_info_window_text">{{name}}</div>
                             <div style="display: flex;">
 
-                                <div class="user_info_window_button"><a class="a_text" href="charlist.html">Мої
+                                <div class="user_info_window_button"><a class="a_text" href="/charlist.html">Мої
                                         персонажі</a></div>
 
                                 <div class="user_info_window_button"><a class="a_text" href="/logout">Вихід</a></div>
@@ -195,7 +195,7 @@
                             <div class="character-stats-prof-list">
                                 <div class="character-stats-prof-list-element">
                                     <input type="checkbox" class="character-stats-check save-throw">
-                                    <input type="number" min="1" max="99" class="input-level center-input" value=""
+                                    <input type="number" min="1" max="99" class="input-level center-input" value="1"
                                         onkeydown="return (event.key >= '0' && event.key <= '') || event.key === '.' || event.key === ',' || event.key === 'Backspace' || event.key === 'Delete' || event.key === 'ArrowLeft' || event.key === 'ArrowRight' || event.key === 'Tab'">
                                     <p>Рятівні кидки</p>
                                 </div>
@@ -395,17 +395,17 @@
                             <p>Пошкодження/Тип</p>
                         </div>
                         <div class="character-spells-list-element">
-                            <input class="name-input more-height" maxlength="50" type="text" placeholder="Назва заклинання">
-                            <input type="number" min="0" max="100" class="input-level" value="1"
+                            <input class="name-input more-height" maxlength="50" type="text" placeholder="Назва заклинання" value="{{character['attack_name']}}">
+                            <input type="number" min="0" max="100" class="input-level" value="{{character['attack_bonus']}}"
                                 onkeydown="return (event.key >= '0' && event.key <= '') || event.key === '.' || event.key === ',' || event.key === 'Backspace' || event.key === 'Delete' || event.key === 'ArrowLeft' || event.key === 'ArrowRight' || event.key === 'Tab'">
-                            <input class="name-input more-height" maxlength="50" type="text" placeholder="Опис заклинання" value ="{{character['attack.damage_type']}}">
+                            <input class="name-input more-height" maxlength="50" type="text" placeholder="Опис заклинання" value="{{character['attack_damage']}}">
                         </div>
                     </div>
                 </div>
 
                 <div class="character-inventory">
                     <div class="character-inventory-caption">Спорядження та інші примітки</div>
-                    <textarea class="name-input textarea-style" maxlength="2000" placeholder="" value ="{{character['note.text']}}"></textarea>
+                    <textarea class="name-input textarea-style" maxlength="2000" placeholder="">{{character['note']}}</textarea>
                 </div>
             </div>
             <div class="button-flex">

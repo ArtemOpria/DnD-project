@@ -21,7 +21,7 @@
 
     <header>
         <div class="header-frame">
-            <div class="header-logo"><a href="/create-char.html"><img src="../static/img/logo.png"></a></div>
+            <div class="header-logo"><a href="/"><img src="../static/img/logo.png"></a></div>
             <div class="header-nav">
 
                 <a href="/bestiary/aboleth" target="_blank">
@@ -35,16 +35,6 @@
                 <a href="merche.html">
                     <p class="header-nav-element">Мерч</p>
                 </a>
-
-                <!-- Цей блок якщо юзер не увійшов -->
-
-                <!-- <a href="auth.html"><p class="header-nav-element">Вхід</p></a>
-                <a href="registration.html"><p class="header-nav-element">Реєстрація</p></a> -->
-
-                <!-- Цей блок якщо юзер не увійшов -->
-
-                <!-- Цей блок якщо юзер вже увійшов -->
-
                 <div class="acc-svg-container">
                     <svg id="id_svg" width="40" height="40" viewBox="0 0 30 30" xmlns="http://www.w3.org/2000/svg"
                         xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -63,10 +53,9 @@
                             <div class="user_info_window_text">{{name}}</div>
                             <div style="display: flex;">
 
-                                <div class="user_info_window_button"><a class="a_text" href="charlist.html">Мої
-                                        персонажі</a></div>
+                                <div class="user_info_window_button"><a class="a_text" href="charlist.html">Мої персонажі</a></div>
 
-                                <div class="user_info_window_button"><a class="a_text" href="/">Вихід</a></div>
+                                <div class="user_info_window_button"><a class="a_text" href="/logout">Вихід</a></div>
                             </div>
                         </div>
                     </div>
@@ -101,7 +90,7 @@
                                 <div class="list-choice-title">Раса</div>
                                 <div class="list-choice-objects">
                                     <label>
-                                        <input type="radio" name="race" value="Дракононароджений"/> <span>Дракононароджений</span>
+                                        <input type="radio" name="race" value="Дракононароджений" checked/> <span>Дракононароджений</span>
                                     </label>
                                     <label>
                                         <input type="radio" name="race" value="Дварф"/> <span>Дварф</span>
@@ -139,7 +128,7 @@
                                 <div class="list-choice-title">Клас</div>
                                 <div class="list-choice-objects">
                                     <label>
-                                        <input type="radio" name="class" value="Воїн" /> <span>Воїн</span>
+                                        <input type="radio" name="class" value="Воїн" checked/> <span>Воїн</span>
                                     </label>
                                     <label>
                                         <input type="radio" name="class" value="Паладін" /> <span>Паладін</span>

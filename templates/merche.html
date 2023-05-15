@@ -11,6 +11,8 @@
     <link rel="stylesheet" href="{{url_for('static', filename='css/header-footer-style.css')}}">
     <link rel="stylesheet" href="{{url_for('static', filename='css/style-merche.css')}}">
     <link rel="stylesheet" href="{{url_for('static', filename='css/style-scrollbar.css')}}">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/show-move.css')}}">
+
 </head>
 
 <body>
@@ -28,12 +30,36 @@
                 
                 <a href="merche.html"><p class="header-nav-element">Мерч</p></a>
                 
-                <a href="auth.html">
-                    <p class="header-nav-element">Вхід</p>
-                </a>
-                <a href="registration.html">
-                    <p class="header-nav-element">Реєстрація</p>
-                </a>
+                {% if current_user.is_authenticated %}
+                    <div class="acc-svg-container">
+                        <svg id="id_svg" width="40" height="40" viewBox="0 0 30 30" xmlns="http://www.w3.org/2000/svg"
+                            xmlns:xlink="http://www.w3.org/1999/xlink">
+                            <rect width="30" height="30" fill="url(#pattern0)" />
+                            <defs>
+                                <pattern id="pattern0" patternContentUnits="objectBoundingBox" width="1" height="1">
+                                    <use xlink:href="#image0_209_43" transform="scale(0.0333333)" />
+                                </pattern>
+                                <image id="image0_209_43" width="30" height="30"
+                                    xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAAAXNSR0IArs4c6QAAAalJREFUSEvtlutNw0AQhGcqgA6ACkgqACoAKgAqIFSAqACoAKiApAKSCggVAB2QCgYNukPWOfadY0UREiv5h2N7v529fYTYkHFDXKwElnQCYD8EPSc56SqgE1jSOYBbANsJ6AvAFcnH0gCKwZLuAFxmHN+THJXAi8Ahtc8lDgGckhzn3i0FzytnugAwimkN6Xc2tipnPuwNlrQL4L3iaEjSgfyapAGA18pPeyQ/2uBZxZIOAbwEJzOSvq+ZpCmAg/DgiKTvG60ruLF4kuLrD3bIktwuPkP37NLzkxTrYEEybbea8qziAHZ/noWvL9J+DQX2EJ4/kXS/t1op2AqsaCd4cyBxWBgSQZ8ABiSdof7goNqVa1gclanjNweQVnwTvUhx/FiSlUeFMQADfzJQojT66gTOpa/L878BDsPEQ8LTzJfNE8rXlOSsVHVWcRiZ1wC8g3P96Wr2grjpNTKT/iwVE9+r9XvVQaPijquwKajGFdkGdsqOu8pM3p+Q9BHVrA1c3Tar8hu3WRvYy93Tqo95qSz9K5St6j7Utm//wevKbHlVrzuCjZ3xN5Iyjh/ou2QrAAAAAElFTkSuQmCC" />
+                            </defs>
+                        </svg>
+                        <div class="user_info_window user_info_display user_info_transition">
+                            <div style="margin-top: 7%;">
+                                <div class="user_info_window_text">Dungeon Master</div>
+                                <div class="user_info_window_text">{{name}}</div>
+                                <div style="display: flex;">
+    
+                                    <div class="user_info_window_button"><a class="a_text" href="charlist.html">Мої персонажі</a></div>
+    
+                                    <div class="user_info_window_button"><a class="a_text" href="/logout">Вихід</a></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {% else %}
+                        <a href="auth.html"><p class="header-nav-element">Вхід</p></a>
+                        <a href="registration.html"><p class="header-nav-element">Реєстрація</p></a>
+                    {% endif %}
             </div>
         </div>
 
@@ -200,6 +226,7 @@
             </div>
         </div>
     </footer>
+    <script src="{{url_for('static', filename='js/script-header.js')}}"></script>
     <script src="{{url_for('static', filename='js/script-merche.js')}}"></script>
     <script src="{{url_for('static', filename='js/script-scrollbar.js')}}"></script>
 </body>
